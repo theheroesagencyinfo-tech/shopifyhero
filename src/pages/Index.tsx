@@ -142,8 +142,85 @@ const Index = () => {
           </div>
         </section>
 
+        {/* PROBLEM */}
+        <section id="problem" className="py-24 md:py-32 border-y border-white/[0.06] bg-card/20 relative overflow-hidden">
+          <div className="pointer-events-none absolute inset-0 grid-bg opacity-30" />
+          <div className="container relative">
+            <div className="max-w-2xl mx-auto text-center mb-14">
+              <p className="text-primary text-xs font-semibold tracking-[0.25em] uppercase mb-4">— The Problem</p>
+              <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-5">
+                Why most Shopify stores <span className="font-serif-display text-gradient">don't make sales</span>
+              </h2>
+              <p className="text-muted-foreground text-lg">
+                You're getting traffic… but no sales. Here's what's quietly killing your conversion rate:
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+              {[
+                { i: XCircle, t: "Poor store design that kills trust", d: "Generic themes, weak branding, and cluttered layouts make buyers bounce within seconds." },
+                { i: AlertTriangle, t: "Confusing product pages", d: "Walls of text, no benefit grid, no social proof — visitors leave without ever hitting add-to-cart." },
+                { i: Target, t: "No conversion strategy", d: "You're guessing what works. No A/B tests, no funnel logic, no plan to turn clicks into revenue." },
+                { i: Smartphone, t: "Slow, unoptimized mobile layout", d: "70% of your traffic is mobile. Slow load times and broken layouts cost you sales every single day." },
+              ].map(({ i: Icon, t, d }) => (
+                <div key={t} className="relative rounded-2xl p-7 glass hover-lift ring-gradient">
+                  <div className="w-11 h-11 rounded-xl bg-destructive/15 text-destructive flex items-center justify-center mb-5">
+                    <Icon className="w-5 h-5" />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2 tracking-tight">{t}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{d}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-center text-foreground/90 mt-12 max-w-xl mx-auto text-lg">
+              <span className="font-serif-display text-gradient text-xl">"You're getting traffic… but no sales."</span>
+              <br />
+              <span className="text-muted-foreground text-base">Sound familiar? You're not alone — and it's fixable.</span>
+            </p>
+          </div>
+        </section>
+
+        {/* SOLUTION */}
+        <section id="solution" className="py-24 md:py-32 relative overflow-hidden">
+          <div className="pointer-events-none absolute -top-20 right-0 w-[500px] h-[500px] bg-orb opacity-50" />
+          <div className="container relative">
+            <div className="max-w-2xl mx-auto text-center mb-14">
+              <p className="text-primary text-xs font-semibold tracking-[0.25em] uppercase mb-4">— Our Solution</p>
+              <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-5">
+                We fix what's stopping your store <span className="font-serif-display text-gradient">from selling</span>
+              </h2>
+              <p className="text-muted-foreground text-lg">
+                We don't just make it pretty. We rebuild your store around one goal: revenue per visitor.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+              {[
+                { i: Target, t: "Conversion-focused design", d: "Every section earns its place. We design backwards from the checkout — not from a Dribbble shot." },
+                { i: Layers, t: "Optimized product pages", d: "Benefit grids, social proof, urgency, FAQ — PDPs engineered to push add-to-cart rates above 8%." },
+                { i: Smartphone, t: "Mobile-first experience", d: "Sub-2-second mobile load. Thumb-friendly UI. Shop Pay one-tap checkout. Built for where your buyers actually are." },
+                { i: Rocket, t: "Strategic layout for higher sales", d: "A funnel-driven layout that guides visitors from curiosity to checkout — without friction or distraction." },
+              ].map(({ i: Icon, t, d }) => (
+                <div key={t} className="glass rounded-2xl p-8 hover-lift ring-gradient">
+                  <div className="w-12 h-12 rounded-xl gradient-sky text-primary-foreground flex items-center justify-center mb-6 sky-glow">
+                    <Icon className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2 tracking-tight">{t}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{d}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-12 text-center">
+              <Button asChild size="lg" className="gradient-sky text-primary-foreground sky-glow text-base h-14 px-8 rounded-full font-semibold">
+                <a href="#offer">
+                  Get My Free Audit
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </a>
+              </Button>
+            </div>
+          </div>
+        </section>
+
         {/* PROOF */}
-        <section id="proof" className="py-24 md:py-32 relative">
+        <section id="proof" className="py-24 md:py-32 relative border-y border-white/[0.06] bg-card/20">
           <div className="pointer-events-none absolute top-1/2 -left-40 w-[500px] h-[500px] bg-orb opacity-60" />
           <div className="container">
             <div className="max-w-2xl mx-auto text-center mb-16">
