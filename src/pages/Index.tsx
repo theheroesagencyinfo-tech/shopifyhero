@@ -1,4 +1,4 @@
-import { ArrowRight, Calendar, CheckCircle2, MessageCircle, Sparkles, TrendingUp, Zap, ShieldCheck, Clock, Star, ExternalLink } from "lucide-react";
+import { ArrowRight, Calendar, CheckCircle2, MessageCircle, Sparkles, TrendingUp, Zap, ShieldCheck, Clock, Star, ExternalLink, AlertTriangle, XCircle, Target, Layers, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BeforeAfter } from "@/components/BeforeAfter";
 import heroBg from "@/assets/landing-hero.jpg";
@@ -22,7 +22,9 @@ const Index = () => {
             <span>TheHeroes<span className="text-primary">.</span>Agency</span>
           </a>
           <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
-            <a href="#case-studies" className="hover:text-foreground transition">Case Studies</a>
+            <a href="#proof" className="hover:text-foreground transition">Proof</a>
+            <a href="#problem" className="hover:text-foreground transition">Problem</a>
+            <a href="#solution" className="hover:text-foreground transition">Solution</a>
             <a href="#offer" className="hover:text-foreground transition">Free Audit</a>
             <a href="#faq" className="hover:text-foreground transition">FAQ</a>
           </nav>
@@ -109,16 +111,16 @@ const Index = () => {
           </div>
         </section>
 
-        {/* CASE STUDIES */}
-        <section id="case-studies" className="py-24 md:py-32">
+        {/* PROOF */}
+        <section id="proof" className="py-24 md:py-32">
           <div className="container">
             <div className="max-w-2xl mx-auto text-center mb-16">
-              <p className="text-primary text-sm font-semibold tracking-widest uppercase mb-3">Case Studies</p>
+              <p className="text-primary text-sm font-semibold tracking-widest uppercase mb-3">Proof · Case Studies</p>
               <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
                 Real stores. Real numbers.
               </h2>
               <p className="text-muted-foreground text-lg">
-                Drag the slider to see the transformation.
+                Drag the slider to see the before/after transformation on live Shopify stores.
               </p>
             </div>
 
@@ -240,7 +242,75 @@ const Index = () => {
           </div>
         </section>
 
-        {/* WHY */}
+        {/* PROBLEM */}
+        <section id="problem" className="py-24 md:py-28 border-y border-border bg-card/30">
+          <div className="container">
+            <div className="max-w-2xl mx-auto text-center mb-14">
+              <p className="text-primary text-sm font-semibold tracking-widest uppercase mb-3">The Problem</p>
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+                Why most Shopify stores fail
+              </h2>
+              <p className="text-muted-foreground text-lg">
+                You're driving traffic. You're spending on ads. But the sales just aren't landing.
+                Here's what's actually killing your conversion rate:
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              {[
+                { i: XCircle, t: "Generic theme, zero identity", d: "Your store looks like 10,000 others. Buyers can't tell why they should trust you over a competitor." },
+                { i: AlertTriangle, t: "Weak hero & unclear offer", d: "Visitors don't understand what you sell or why they should care — within 3 seconds, they bounce." },
+                { i: Clock, t: "Slow mobile load times", d: "70% of your traffic is mobile. Every extra second of load time costs you ~7% of conversions." },
+                { i: TrendingUp, t: "No real social proof", d: "No reviews, no UGC, no founder story. Buyers have no reason to trust you with their card." },
+                { i: ShieldCheck, t: "PDPs that leak buyers", d: "Walls of text, no benefit grid, no FAQ, no urgency. Add-to-cart rates stay below 3%." },
+                { i: Zap, t: "Checkout friction", d: "Forced account creation, no Shop Pay, surprise shipping costs — 68% of carts get abandoned." },
+              ].map(({ i: Icon, t, d }) => (
+                <div key={t} className="rounded-2xl p-6 border border-border bg-card/60 hover-lift">
+                  <div className="w-10 h-10 rounded-lg bg-destructive/10 text-destructive flex items-center justify-center mb-4">
+                    <Icon className="w-5 h-5" />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2">{t}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{d}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-center text-muted-foreground mt-12 max-w-xl mx-auto">
+              The good news? Every one of these is fixable — usually within <span className="text-foreground font-semibold">7 days</span>.
+            </p>
+          </div>
+        </section>
+
+        {/* SOLUTION */}
+        <section id="solution" className="py-24 md:py-32">
+          <div className="container">
+            <div className="max-w-2xl mx-auto text-center mb-14">
+              <p className="text-primary text-sm font-semibold tracking-widest uppercase mb-3">Our Solution</p>
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+                What we do <span className="text-gradient">differently</span>
+              </h2>
+              <p className="text-muted-foreground text-lg">
+                We don't just "make it pretty." We rebuild your store around one goal: revenue per visitor.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+              {[
+                { i: Target, t: "Conversion-first design", d: "Every section earns its place. We design backwards from the checkout — not from a Dribbble shot." },
+                { i: Layers, t: "Built for Shopify, not on it", d: "Custom Liquid, Recharge subscriptions, Klaviyo flows, Shop Pay — your stack works as one system." },
+                { i: Rocket, t: "Speed-obsessed engineering", d: "Sub-2-second mobile load. Lazy images, optimized Liquid, zero bloat apps. Core Web Vitals: green." },
+                { i: ShieldCheck, t: "Data-driven, not opinion-driven", d: "We A/B test hero, PDP, and checkout. Decisions come from your data — not from our taste." },
+              ].map(({ i: Icon, t, d }) => (
+                <div key={t} className="glass rounded-2xl p-7 hover-lift">
+                  <div className="w-12 h-12 rounded-lg gradient-sky text-primary-foreground flex items-center justify-center mb-5">
+                    <Icon className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">{t}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{d}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* WHAT YOU GET */}
         <section className="py-24 border-y border-border bg-card/30">
           <div className="container">
             <div className="max-w-2xl mx-auto text-center mb-14">
@@ -333,6 +403,34 @@ const Index = () => {
                   <p className="text-muted-foreground mt-3 text-sm leading-relaxed">{f.a}</p>
                 </details>
               ))}
+            </div>
+
+            {/* FINAL CTA */}
+            <div className="mt-20 text-center">
+              <h3 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+                Ready to see what your store could do?
+              </h3>
+              <p className="text-muted-foreground text-lg mb-8 max-w-xl mx-auto">
+                Claim your free Shopify audit today. 12-hour delivery. Zero obligation.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button asChild size="lg" className="gradient-sky text-primary-foreground sky-glow text-base h-14 px-8">
+                  <a href="#offer">
+                    Get My Free Audit
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </a>
+                </Button>
+                <Button
+                  asChild
+                  size="lg"
+                  className="text-base h-14 px-8 bg-[hsl(var(--whatsapp))] hover:bg-[hsl(var(--whatsapp))]/90 text-white"
+                >
+                  <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                    <MessageCircle className="mr-2 w-5 h-5" />
+                    WhatsApp Us
+                  </a>
+                </Button>
+              </div>
             </div>
           </div>
         </section>
