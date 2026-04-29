@@ -712,15 +712,22 @@ const Index = () => {
             </div>
 
             {/* FINAL CTA */}
-            <div className="mt-24 text-center">
-              <h3 className="text-3xl md:text-5xl font-bold tracking-tight mb-5 leading-[1.05]">
-                Stop Losing Sales —{" "}
-                <span className="font-serif-display text-gradient">Fix Your Store Today.</span>
-              </h3>
-              <p className="text-muted-foreground text-lg mb-8 max-w-xl mx-auto">
-                Get a free audit and discover exactly what's holding your store back. 12-hour delivery. Zero obligation.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="mt-24 relative">
+              <div className="absolute -inset-4 gradient-sky opacity-20 blur-3xl rounded-[2rem]" />
+              <div className="relative glass-strong rounded-[2rem] p-10 md:p-14 text-center premium-shadow ring-gradient overflow-hidden">
+                <div className="absolute inset-x-0 top-0 h-px shimmer" />
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-destructive/10 border border-destructive/30 text-xs font-semibold mb-6 text-destructive uppercase tracking-[0.2em]">
+                  <AlertTriangle className="w-3.5 h-3.5" />
+                  Last call
+                </div>
+                <h3 className="text-3xl md:text-5xl font-bold tracking-tight mb-5 leading-[1.05] max-w-3xl mx-auto">
+                  Every Day Your Store Isn't Optimized…{" "}
+                  <span className="font-serif-display text-gradient">You're Losing Sales.</span>
+                </h3>
+                <p className="text-muted-foreground text-lg mb-8 max-w-xl mx-auto">
+                  Fix it now — before you waste more traffic, more ad spend, more momentum. The audit is free. The cost of waiting isn't.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild size="lg" className="gradient-sky text-primary-foreground sky-glow text-base h-14 px-8 rounded-full font-semibold">
                   <a href="#offer">
                     Get Free Audit Now
@@ -737,6 +744,12 @@ const Index = () => {
                     Chat on WhatsApp
                   </a>
                 </Button>
+                </div>
+                <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-muted-foreground">
+                  <span className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5 text-primary" /> 12h delivery</span>
+                  <span className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-primary" /> No credit card</span>
+                  <span className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-primary" /> Zero obligation</span>
+                </div>
               </div>
             </div>
           </div>
