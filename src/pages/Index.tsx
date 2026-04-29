@@ -19,7 +19,6 @@ const Index = () => {
       <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border">
         <div className="container flex items-center justify-between h-16">
           <a href="#top" className="flex items-center gap-2 font-bold text-lg">
-            <Sparkles className="w-5 h-5 text-primary" />
             <span>TheHeroes<span className="text-primary">.</span>Agency</span>
           </a>
           <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
@@ -84,7 +83,7 @@ const Index = () => {
                 </div>
                 <div className="flex items-center gap-1.5">
                   <CheckCircle2 className="w-4 h-4 text-primary" />
-                  Reply in 24h
+                  Reply in 12h
                 </div>
                 <div className="hidden sm:flex items-center gap-1.5">
                   <CheckCircle2 className="w-4 h-4 text-primary" />
@@ -98,7 +97,7 @@ const Index = () => {
               {[
                 { v: "+312%", l: "Avg. revenue lift" },
                 { v: "2.4×", l: "Conversion rate" },
-                { v: "60d", l: "Time to results" },
+                { v: "7d", l: "Time to results" },
                 { v: "50+", l: "Stores rebuilt" },
               ].map((s) => (
                 <div key={s.l} className="bg-card p-6 text-center">
@@ -307,7 +306,7 @@ const Index = () => {
               </div>
 
               <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
-                <div className="flex items-center gap-1.5"><Clock className="w-4 h-4 text-primary" /> 48h delivery</div>
+                <div className="flex items-center gap-1.5"><Clock className="w-4 h-4 text-primary" /> 12h delivery</div>
                 <div className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-primary" /> No obligations</div>
                 <div className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-primary" /> 100% free</div>
               </div>
@@ -343,7 +342,6 @@ const Index = () => {
       <footer className="border-t border-border py-10">
           <div className="container flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-primary" />
               <span>© {new Date().getFullYear()} TheHeroes Agency · theheroesagency.org</span>
             </div>
             <div className="flex items-center gap-6">
