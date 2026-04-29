@@ -674,16 +674,6 @@ const Index = () => {
           </div>
       </footer>
 
-      {/* Floating WhatsApp */}
-      <a
-        href={WHATSAPP_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Chat on WhatsApp"
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[hsl(var(--whatsapp))] text-white flex items-center justify-center shadow-2xl shadow-[hsl(var(--whatsapp))]/40 hover:scale-110 transition ring-4 ring-[hsl(var(--whatsapp))]/20"
-      >
-        <MessageCircle className="w-6 h-6" />
-      </a>
     </div>
   );
 };
