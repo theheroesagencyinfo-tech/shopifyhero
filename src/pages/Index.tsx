@@ -344,7 +344,7 @@ const Index = () => {
           <div className="container flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
               <Sparkles className="w-4 h-4 text-primary" />
-              <span>© {new Date().getFullYear()} TheHeroes Agency · theheroesagency.com</span>
+              <span>© {new Date().getFullYear()} TheHeroes Agency · theheroesagency.org</span>
             </div>
             <div className="flex items-center gap-6">
               <a href={EMAIL_URL} className="hover:text-foreground">info@theheroesagency.org</a>
