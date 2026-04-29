@@ -1,4 +1,4 @@
-import { ArrowRight, Calendar, CheckCircle2, MessageCircle, Sparkles, TrendingUp, Zap, ShieldCheck, Clock, Star, ExternalLink, AlertTriangle, XCircle, Target, Layers, Rocket } from "lucide-react";
+import { ArrowRight, Calendar, CheckCircle2, MessageCircle, TrendingUp, Zap, ShieldCheck, Clock, Star, ExternalLink, AlertTriangle, XCircle, Target, Layers, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BeforeAfter } from "@/components/BeforeAfter";
 import heroBg from "@/assets/landing-hero.jpg";
@@ -16,9 +16,12 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* NAV */}
-      <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border">
+      <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-background/60 border-b border-white/[0.06]">
         <div className="container flex items-center justify-between h-16">
-          <a href="#top" className="flex items-center gap-2 font-bold text-lg">
+          <a href="#top" className="flex items-center gap-2 font-bold text-lg tracking-tight">
+            <span className="w-7 h-7 rounded-lg gradient-sky sky-glow flex items-center justify-center">
+              <span className="w-2 h-2 rounded-sm bg-background" />
+            </span>
             <span>TheHeroes<span className="text-primary">.</span>Agency</span>
           </a>
           <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
@@ -28,7 +31,7 @@ const Index = () => {
             <a href="#offer" className="hover:text-foreground transition">Free Audit</a>
             <a href="#faq" className="hover:text-foreground transition">FAQ</a>
           </nav>
-          <Button asChild size="sm" className="gradient-sky text-primary-foreground">
+          <Button asChild size="sm" className="gradient-sky text-primary-foreground sky-glow rounded-full px-5">
             <a href="#offer">Get Free Audit</a>
           </Button>
         </div>
@@ -36,41 +39,48 @@ const Index = () => {
 
       <main id="top">
         {/* HERO */}
-        <section className="relative pt-32 pb-24 md:pt-44 md:pb-32 overflow-hidden">
+        <section className="relative pt-32 pb-24 md:pt-48 md:pb-40 overflow-hidden">
           <img
             src={heroBg}
             alt=""
             aria-hidden
-            className="absolute inset-0 w-full h-full object-cover opacity-40"
+            className="absolute inset-0 w-full h-full object-cover opacity-30"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/80 to-background" />
-          <div className="absolute inset-0 grid-bg opacity-40" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/85 to-background" />
+          <div className="absolute inset-0 grid-bg opacity-60" />
+          {/* Ambient orbs */}
+          <div className="pointer-events-none absolute -top-20 -left-20 w-[480px] h-[480px] bg-orb animate-float-slow" />
+          <div className="pointer-events-none absolute top-40 -right-32 w-[520px] h-[520px] bg-orb animate-float-slow" style={{ animationDelay: "-6s" }} />
+          <div className="absolute inset-0 noise" />
 
           <div className="container relative">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium mb-8">
-                <Sparkles className="w-3.5 h-3.5" />
-                Shopify Experts since 2016 · 120+ stores
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-foreground/90 text-xs font-medium mb-8 ring-gradient">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-60"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                </span>
+                Shopify Experts since 2016 · 120+ stores shipped
               </div>
 
-              <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold leading-[1.05] tracking-tight mb-6">
+              <h1 className="text-5xl sm:text-6xl md:text-[5.5rem] font-bold leading-[1.02] tracking-tight mb-7">
                 We turn underperforming Shopify stores into{" "}
-                <span className="text-gradient">revenue machines</span>
+                <span className="font-serif-display text-gradient">revenue machines</span>
               </h1>
 
-              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
+              <p className="text-lg md:text-xl text-muted-foreground/90 max-w-2xl mx-auto mb-10 leading-relaxed">
                 Most stores lose 70% of buyers at the homepage. We redesign your store
                 to convert — typically lifting revenue <span className="text-foreground font-semibold">2–4×</span> within 7 days.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Button asChild size="lg" className="gradient-sky text-primary-foreground sky-glow text-base h-14 px-8">
+                <Button asChild size="lg" className="gradient-sky text-primary-foreground sky-glow text-base h-14 px-8 rounded-full font-semibold">
                   <a href="#offer">
                     Get My Free Store Audit
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </a>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="text-base h-14 px-8 border-border hover:bg-secondary">
+                <Button asChild size="lg" variant="outline" className="text-base h-14 px-8 rounded-full border-white/15 bg-white/[0.02] hover:bg-white/[0.06] backdrop-blur-md">
                   <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="mr-2 w-5 h-5" />
                     Chat on WhatsApp
@@ -78,7 +88,7 @@ const Index = () => {
                 </Button>
               </div>
 
-              <div className="mt-10 flex items-center justify-center gap-6 text-sm text-muted-foreground">
+              <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
                 <div className="flex items-center gap-1.5">
                   <CheckCircle2 className="w-4 h-4 text-primary" />
                   No credit card
@@ -87,7 +97,7 @@ const Index = () => {
                   <CheckCircle2 className="w-4 h-4 text-primary" />
                   Reply in 12h
                 </div>
-                <div className="hidden sm:flex items-center gap-1.5">
+                <div className="flex items-center gap-1.5">
                   <CheckCircle2 className="w-4 h-4 text-primary" />
                   100% free
                 </div>
@@ -95,29 +105,51 @@ const Index = () => {
             </div>
 
             {/* Result strip */}
-            <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-px bg-border rounded-2xl overflow-hidden border border-border max-w-4xl mx-auto">
+            <div className="mt-24 relative max-w-5xl mx-auto">
+              <div className="absolute -inset-px rounded-3xl gradient-sky opacity-30 blur-xl" />
+              <div className="relative grid grid-cols-2 md:grid-cols-4 gap-px bg-white/5 rounded-3xl overflow-hidden ring-gradient premium-shadow">
               {[
                 { v: "+312%", l: "Avg. revenue lift" },
                 { v: "2.4×", l: "Conversion rate" },
                 { v: "7d", l: "Time to results" },
                 { v: "50+", l: "Stores rebuilt" },
               ].map((s) => (
-                <div key={s.l} className="bg-card p-6 text-center">
-                  <div className="text-2xl md:text-3xl font-bold text-gradient">{s.v}</div>
-                  <div className="text-xs md:text-sm text-muted-foreground mt-1">{s.l}</div>
+                <div key={s.l} className="bg-card/80 backdrop-blur-md p-7 text-center">
+                  <div className="text-3xl md:text-4xl font-bold text-gradient tracking-tight">{s.v}</div>
+                  <div className="text-xs md:text-sm text-muted-foreground mt-1.5 uppercase tracking-wider">{s.l}</div>
                 </div>
               ))}
+              </div>
+            </div>
+
+            {/* Trusted by strip */}
+            <div className="mt-20 text-center">
+              <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground/70 mb-6">
+                Trusted by founders building on
+              </p>
+              <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 text-muted-foreground/60 text-sm font-semibold">
+                <span className="hover:text-foreground transition">Shopify Plus</span>
+                <span className="opacity-30">·</span>
+                <span className="hover:text-foreground transition">Recharge</span>
+                <span className="opacity-30">·</span>
+                <span className="hover:text-foreground transition">Klaviyo</span>
+                <span className="opacity-30">·</span>
+                <span className="hover:text-foreground transition">Shop Pay</span>
+                <span className="opacity-30">·</span>
+                <span className="hover:text-foreground transition">Judge.me</span>
+              </div>
             </div>
           </div>
         </section>
 
         {/* PROOF */}
-        <section id="proof" className="py-24 md:py-32">
+        <section id="proof" className="py-24 md:py-32 relative">
+          <div className="pointer-events-none absolute top-1/2 -left-40 w-[500px] h-[500px] bg-orb opacity-60" />
           <div className="container">
             <div className="max-w-2xl mx-auto text-center mb-16">
-              <p className="text-primary text-sm font-semibold tracking-widest uppercase mb-3">Proof · Case Studies</p>
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-                Real stores. Real numbers.
+              <p className="text-primary text-xs font-semibold tracking-[0.25em] uppercase mb-4">— Proof · Case Studies</p>
+              <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-5">
+                Real stores. <span className="font-serif-display text-gradient">Real numbers.</span>
               </h2>
               <p className="text-muted-foreground text-lg">
                 Drag the slider to see the before/after transformation on live Shopify stores.
@@ -127,20 +159,23 @@ const Index = () => {
             <div className="space-y-24">
               {/* Case 1 — Take Let Loose */}
               <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-                <div>
+                <div className="relative">
+                  <div className="absolute -inset-4 gradient-sky opacity-20 blur-3xl rounded-3xl" />
+                  <div className="relative">
                   <BeforeAfter
                     before={auditBefore1}
                     after={auditAfter1}
                     beforeAlt="Take Let Loose homepage before audit — generic theme, weak positioning"
                     afterAlt="Take Let Loose Shopify homepage after redesign — bold subscription-first DTC"
                   />
+                  </div>
                 </div>
                 <div>
-                  <p className="text-primary text-xs font-semibold tracking-widest uppercase mb-3">
-                    Audit Case Study 01 — Take Let Loose · Gut-Health DTC
+                  <p className="text-primary text-xs font-semibold tracking-[0.25em] uppercase mb-4">
+                    01 — Take Let Loose · Gut-Health DTC
                   </p>
-                  <h3 className="text-3xl md:text-4xl font-bold mb-5">
-                    From flat launch to <span className="text-gradient">subscription-first growth</span>
+                  <h3 className="text-3xl md:text-5xl font-bold mb-5 tracking-tight">
+                    From flat launch to <span className="font-serif-display text-gradient">subscription-first growth</span>
                   </h3>
                   <p className="text-muted-foreground text-lg mb-6">
                     Our free audit flagged a weak hero, no subscription anchor, and friction at PDP.
@@ -153,9 +188,9 @@ const Index = () => {
                       { v: "2.8×", l: "Conversion rate" },
                       { v: "62%", l: "Subscription rate" },
                     ].map((s) => (
-                      <div key={s.l} className="glass rounded-lg p-4 text-center">
-                        <div className="text-xl font-bold text-foreground">{s.v}</div>
-                        <div className="text-xs text-muted-foreground mt-1">{s.l}</div>
+                      <div key={s.l} className="glass rounded-xl p-4 text-center ring-gradient">
+                        <div className="text-2xl font-bold text-gradient">{s.v}</div>
+                        <div className="text-xs text-muted-foreground mt-1 uppercase tracking-wider">{s.l}</div>
                       </div>
                     ))}
                   </div>
@@ -184,20 +219,23 @@ const Index = () => {
 
               {/* Case 2 — Valeva */}
               <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-                <div className="lg:order-2">
+                <div className="lg:order-2 relative">
+                  <div className="absolute -inset-4 gradient-sky opacity-20 blur-3xl rounded-3xl" />
+                  <div className="relative">
                   <BeforeAfter
                     before={auditBefore2}
                     after={auditAfter2}
                     beforeAlt="Valeva homepage before audit — dated layout, low trust"
                     afterAlt="Valeva Shopify homepage after redesign — cinematic founder-led haircare flagship"
                   />
+                  </div>
                 </div>
                 <div className="lg:order-1">
-                  <p className="text-primary text-xs font-semibold tracking-widest uppercase mb-3">
-                    Audit Case Study 02 — Valeva · Hair & Scalp Wellness
+                  <p className="text-primary text-xs font-semibold tracking-[0.25em] uppercase mb-4">
+                    02 — Valeva · Hair & Scalp Wellness
                   </p>
-                  <h3 className="text-3xl md:text-4xl font-bold mb-5">
-                    Cinematic rebuild → <span className="text-gradient">2.4× AOV</span>
+                  <h3 className="text-3xl md:text-5xl font-bold mb-5 tracking-tight">
+                    Cinematic rebuild → <span className="font-serif-display text-gradient">2.4× AOV</span>
                   </h3>
                   <p className="text-muted-foreground text-lg mb-6">
                     The audit identified low founder trust and a missing review system as the
@@ -210,9 +248,9 @@ const Index = () => {
                       { v: "+318%", l: "Add-to-cart" },
                       { v: "−47%", l: "Bounce rate" },
                     ].map((s) => (
-                      <div key={s.l} className="glass rounded-lg p-4 text-center">
-                        <div className="text-xl font-bold text-foreground">{s.v}</div>
-                        <div className="text-xs text-muted-foreground mt-1">{s.l}</div>
+                      <div key={s.l} className="glass rounded-xl p-4 text-center ring-gradient">
+                        <div className="text-2xl font-bold text-gradient">{s.v}</div>
+                        <div className="text-xs text-muted-foreground mt-1 uppercase tracking-wider">{s.l}</div>
                       </div>
                     ))}
                   </div>
@@ -243,12 +281,13 @@ const Index = () => {
         </section>
 
         {/* PROBLEM */}
-        <section id="problem" className="py-24 md:py-28 border-y border-border bg-card/30">
-          <div className="container">
+        <section id="problem" className="py-24 md:py-32 border-y border-white/[0.06] bg-card/20 relative overflow-hidden">
+          <div className="pointer-events-none absolute inset-0 grid-bg opacity-30" />
+          <div className="container relative">
             <div className="max-w-2xl mx-auto text-center mb-14">
-              <p className="text-primary text-sm font-semibold tracking-widest uppercase mb-3">The Problem</p>
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-                Why most Shopify stores fail
+              <p className="text-primary text-xs font-semibold tracking-[0.25em] uppercase mb-4">— The Problem</p>
+              <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-5">
+                Why most Shopify stores <span className="font-serif-display text-gradient">quietly fail</span>
               </h2>
               <p className="text-muted-foreground text-lg">
                 You're driving traffic. You're spending on ads. But the sales just aren't landing.
@@ -264,11 +303,11 @@ const Index = () => {
                 { i: ShieldCheck, t: "PDPs that leak buyers", d: "Walls of text, no benefit grid, no FAQ, no urgency. Add-to-cart rates stay below 3%." },
                 { i: Zap, t: "Checkout friction", d: "Forced account creation, no Shop Pay, surprise shipping costs — 68% of carts get abandoned." },
               ].map(({ i: Icon, t, d }) => (
-                <div key={t} className="rounded-2xl p-6 border border-border bg-card/60 hover-lift">
-                  <div className="w-10 h-10 rounded-lg bg-destructive/10 text-destructive flex items-center justify-center mb-4">
+                <div key={t} className="relative rounded-2xl p-7 glass hover-lift ring-gradient">
+                  <div className="w-11 h-11 rounded-xl bg-destructive/15 text-destructive flex items-center justify-center mb-5">
                     <Icon className="w-5 h-5" />
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">{t}</h3>
+                  <h3 className="text-lg font-semibold mb-2 tracking-tight">{t}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">{d}</p>
                 </div>
               ))}
@@ -280,12 +319,13 @@ const Index = () => {
         </section>
 
         {/* SOLUTION */}
-        <section id="solution" className="py-24 md:py-32">
-          <div className="container">
+        <section id="solution" className="py-24 md:py-32 relative overflow-hidden">
+          <div className="pointer-events-none absolute -top-20 right-0 w-[500px] h-[500px] bg-orb opacity-50" />
+          <div className="container relative">
             <div className="max-w-2xl mx-auto text-center mb-14">
-              <p className="text-primary text-sm font-semibold tracking-widest uppercase mb-3">Our Solution</p>
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-                What we do <span className="text-gradient">differently</span>
+              <p className="text-primary text-xs font-semibold tracking-[0.25em] uppercase mb-4">— Our Solution</p>
+              <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-5">
+                What we do <span className="font-serif-display text-gradient">differently</span>
               </h2>
               <p className="text-muted-foreground text-lg">
                 We don't just "make it pretty." We rebuild your store around one goal: revenue per visitor.
@@ -298,12 +338,12 @@ const Index = () => {
                 { i: Rocket, t: "Speed-obsessed engineering", d: "Sub-2-second mobile load. Lazy images, optimized Liquid, zero bloat apps. Core Web Vitals: green." },
                 { i: ShieldCheck, t: "Data-driven, not opinion-driven", d: "We A/B test hero, PDP, and checkout. Decisions come from your data — not from our taste." },
               ].map(({ i: Icon, t, d }) => (
-                <div key={t} className="glass rounded-2xl p-7 hover-lift">
-                  <div className="w-12 h-12 rounded-lg gradient-sky text-primary-foreground flex items-center justify-center mb-5">
+                <div key={t} className="glass rounded-2xl p-8 hover-lift ring-gradient">
+                  <div className="w-12 h-12 rounded-xl gradient-sky text-primary-foreground flex items-center justify-center mb-6 sky-glow">
                     <Icon className="w-6 h-6" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">{t}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{d}</p>
+                  <h3 className="text-xl font-semibold mb-2 tracking-tight">{t}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{d}</p>
                 </div>
               ))}
             </div>
@@ -311,11 +351,12 @@ const Index = () => {
         </section>
 
         {/* WHAT YOU GET */}
-        <section className="py-24 border-y border-border bg-card/30">
+        <section className="py-24 md:py-28 border-y border-white/[0.06] bg-card/20">
           <div className="container">
             <div className="max-w-2xl mx-auto text-center mb-14">
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-                What you actually get
+              <p className="text-primary text-xs font-semibold tracking-[0.25em] uppercase mb-4">— Deliverables</p>
+              <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-5">
+                What you <span className="font-serif-display text-gradient">actually get</span>
               </h2>
               <p className="text-muted-foreground text-lg">
                 A 15-page audit + a free 1:1 strategy call. No fluff, no obligation.
@@ -327,12 +368,12 @@ const Index = () => {
                 { i: Zap, t: "Speed & UX report", d: "Mobile speed score, Core Web Vitals, and the top 5 UX leaks costing you sales." },
                 { i: ShieldCheck, t: "Personalized roadmap", d: "A prioritized 90-day action plan you can implement yourself or hand to your team." },
               ].map(({ i: Icon, t, d }) => (
-                <div key={t} className="glass rounded-2xl p-7 hover-lift">
-                  <div className="w-12 h-12 rounded-lg gradient-sky text-primary-foreground flex items-center justify-center mb-5">
+                <div key={t} className="glass rounded-2xl p-8 hover-lift ring-gradient">
+                  <div className="w-12 h-12 rounded-xl gradient-sky text-primary-foreground flex items-center justify-center mb-6 sky-glow">
                     <Icon className="w-6 h-6" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">{t}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{d}</p>
+                  <h3 className="text-xl font-semibold mb-2 tracking-tight">{t}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{d}</p>
                 </div>
               ))}
             </div>
@@ -342,22 +383,26 @@ const Index = () => {
         {/* OFFER / CTA */}
         <section id="offer" className="py-24 md:py-32 relative overflow-hidden">
           <div className="absolute inset-0 bg-glow-radial" />
+          <div className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 h-[600px] bg-orb opacity-70" />
           <div className="container relative">
-            <div className="max-w-3xl mx-auto glass rounded-3xl p-10 md:p-16 text-center sky-glow">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/15 text-primary text-sm font-semibold mb-6">
-                <Star className="w-3.5 h-3.5 fill-current" />
-                Limited — 5 audits per month
-              </div>
-              <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-5">
-                Free Shopify Store Audit
-              </h2>
-              <p className="text-muted-foreground text-lg md:text-xl mb-8 max-w-xl mx-auto">
-                Get a full conversion teardown + a free homepage redesign preview.
-                Worth $750 — yours free.
-              </p>
+            <div className="relative max-w-3xl mx-auto">
+              <div className="absolute -inset-2 rounded-[2rem] gradient-sky opacity-30 blur-2xl" />
+              <div className="relative glass-strong rounded-[2rem] p-10 md:p-16 text-center premium-shadow ring-gradient overflow-hidden">
+                <div className="absolute inset-x-0 top-0 h-px shimmer" />
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[hsl(var(--gold))]/10 border border-[hsl(var(--gold))]/30 text-sm font-semibold mb-6">
+                  <Star className="w-3.5 h-3.5 fill-[hsl(var(--gold))] text-[hsl(var(--gold))]" />
+                  <span className="text-gradient-gold">Limited — 5 audits per month</span>
+                </div>
+                <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-5 leading-[1.05]">
+                  Free Shopify <span className="font-serif-display text-gradient">Store Audit</span>
+                </h2>
+                <p className="text-muted-foreground text-lg md:text-xl mb-8 max-w-xl mx-auto leading-relaxed">
+                  Get a full conversion teardown + a free homepage redesign preview.
+                  <span className="text-foreground font-medium"> Worth $750</span> — yours free.
+                </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                <Button asChild size="lg" className="gradient-sky text-primary-foreground sky-glow text-base h-14 px-8">
+                <Button asChild size="lg" className="gradient-sky text-primary-foreground sky-glow text-base h-14 px-8 rounded-full font-semibold">
                   <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
                     <Calendar className="mr-2 w-5 h-5" />
                     Book a Call
@@ -366,7 +411,7 @@ const Index = () => {
                 <Button
                   asChild
                   size="lg"
-                  className="text-base h-14 px-8 bg-[hsl(var(--whatsapp))] hover:bg-[hsl(var(--whatsapp))]/90 text-white"
+                  className="text-base h-14 px-8 rounded-full bg-[hsl(var(--whatsapp))] hover:bg-[hsl(var(--whatsapp))]/90 text-white font-semibold"
                 >
                   <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="mr-2 w-5 h-5" />
@@ -380,14 +425,20 @@ const Index = () => {
                 <div className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-primary" /> No obligations</div>
                 <div className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-primary" /> 100% free</div>
               </div>
+              </div>
             </div>
           </div>
         </section>
 
         {/* FAQ */}
-        <section id="faq" className="py-24 border-t border-border">
+        <section id="faq" className="py-24 md:py-28 border-t border-white/[0.06]">
           <div className="container max-w-3xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Common questions</h2>
+            <div className="text-center mb-14">
+              <p className="text-primary text-xs font-semibold tracking-[0.25em] uppercase mb-4">— FAQ</p>
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+                Common <span className="font-serif-display text-gradient">questions</span>
+              </h2>
+            </div>
             <div className="space-y-4">
               {[
                 { q: "Is the audit really free?", a: "Yes — 100% free, no credit card. We do 5 per month because each one takes 4–6 hours of real work." },
@@ -395,10 +446,10 @@ const Index = () => {
                 { q: "Will you try to upsell me?", a: "We'll show you exactly what's broken. If you want help fixing it, we'll quote you. If not, you keep the audit. No pressure." },
                 { q: "How fast do I get it?", a: "Within 12 hours of booking, including a recorded video walkthrough." },
               ].map((f) => (
-                <details key={f.q} className="glass rounded-xl p-5 group">
-                  <summary className="cursor-pointer font-semibold flex items-center justify-between list-none">
+                <details key={f.q} className="glass rounded-2xl p-6 group ring-gradient">
+                  <summary className="cursor-pointer font-semibold flex items-center justify-between list-none text-base">
                     {f.q}
-                    <span className="text-primary group-open:rotate-45 transition-transform">+</span>
+                    <span className="text-primary group-open:rotate-45 transition-transform text-xl leading-none">+</span>
                   </summary>
                   <p className="text-muted-foreground mt-3 text-sm leading-relaxed">{f.a}</p>
                 </details>
@@ -406,15 +457,15 @@ const Index = () => {
             </div>
 
             {/* FINAL CTA */}
-            <div className="mt-20 text-center">
-              <h3 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-                Ready to see what your store could do?
+            <div className="mt-24 text-center">
+              <h3 className="text-3xl md:text-5xl font-bold tracking-tight mb-5">
+                Ready to see what your store <span className="font-serif-display text-gradient">could do?</span>
               </h3>
               <p className="text-muted-foreground text-lg mb-8 max-w-xl mx-auto">
                 Claim your free Shopify audit today. 12-hour delivery. Zero obligation.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild size="lg" className="gradient-sky text-primary-foreground sky-glow text-base h-14 px-8">
+                <Button asChild size="lg" className="gradient-sky text-primary-foreground sky-glow text-base h-14 px-8 rounded-full font-semibold">
                   <a href="#offer">
                     Get My Free Audit
                     <ArrowRight className="ml-2 w-5 h-5" />
@@ -423,7 +474,7 @@ const Index = () => {
                 <Button
                   asChild
                   size="lg"
-                  className="text-base h-14 px-8 bg-[hsl(var(--whatsapp))] hover:bg-[hsl(var(--whatsapp))]/90 text-white"
+                  className="text-base h-14 px-8 rounded-full bg-[hsl(var(--whatsapp))] hover:bg-[hsl(var(--whatsapp))]/90 text-white font-semibold"
                 >
                   <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="mr-2 w-5 h-5" />
@@ -437,9 +488,12 @@ const Index = () => {
       </main>
 
       {/* FOOTER */}
-      <footer className="border-t border-border py-10">
+      <footer className="border-t border-white/[0.06] py-10">
           <div className="container flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3">
+              <span className="w-6 h-6 rounded-md gradient-sky flex items-center justify-center">
+                <span className="w-1.5 h-1.5 rounded-sm bg-background" />
+              </span>
               <span>© {new Date().getFullYear()} TheHeroes Agency · theheroesagency.org</span>
             </div>
             <div className="flex items-center gap-6">
@@ -456,7 +510,7 @@ const Index = () => {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[hsl(var(--whatsapp))] text-white flex items-center justify-center shadow-lg hover:scale-110 transition"
+        className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[hsl(var(--whatsapp))] text-white flex items-center justify-center shadow-2xl shadow-[hsl(var(--whatsapp))]/40 hover:scale-110 transition ring-4 ring-[hsl(var(--whatsapp))]/20"
       >
         <MessageCircle className="w-6 h-6" />
       </a>
