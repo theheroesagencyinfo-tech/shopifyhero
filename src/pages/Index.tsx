@@ -641,22 +641,6 @@ const Index = () => {
         </section>
       </main>
 
-      {/* FLOATING WHATSAPP CTA */}
-      <a
-        href={WHATSAPP_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Chat on WhatsApp"
-        className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 pl-4 pr-5 h-14 rounded-full bg-[hsl(var(--whatsapp))] hover:bg-[hsl(var(--whatsapp))]/90 text-white font-semibold shadow-[0_10px_40px_-10px_hsl(var(--whatsapp)/0.7)] transition-transform hover:scale-105"
-      >
-        <span className="relative flex h-2.5 w-2.5">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white/70 opacity-70"></span>
-          <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-white"></span>
-        </span>
-        <MessageCircle className="w-5 h-5" />
-        <span className="hidden sm:inline text-sm">Chat on WhatsApp</span>
-      </a>
-
       {/* FOOTER */}
       <footer className="border-t border-white/[0.06] py-10">
           <div className="container flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
