@@ -1,11 +1,11 @@
-import { ArrowRight, Calendar, CheckCircle2, MessageCircle, Sparkles, TrendingUp, Zap, ShieldCheck, Clock, Star } from "lucide-react";
+import { ArrowRight, Calendar, CheckCircle2, MessageCircle, Sparkles, TrendingUp, Zap, ShieldCheck, Clock, Star, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BeforeAfter } from "@/components/BeforeAfter";
 import heroBg from "@/assets/landing-hero.jpg";
-import before1 from "@/assets/before-1.jpg";
-import after1 from "@/assets/after-1.jpg";
-import before2 from "@/assets/before-2.jpg";
-import after2 from "@/assets/after-2.jpg";
+import auditBefore1 from "@/assets/audit-before-1.jpg";
+import auditAfter1 from "@/assets/audit-after-1.png";
+import auditBefore2 from "@/assets/audit-before-2.jpg";
+import auditAfter2 from "@/assets/audit-after-2.png";
 
 const WHATSAPP_URL =
   "https://wa.me/2348067452380?text=Hi!%20I'd%20like%20a%20free%20Shopify%20store%20audit.";
