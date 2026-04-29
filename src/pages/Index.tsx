@@ -1,4 +1,4 @@
-import { ArrowRight, Calendar, CheckCircle2, MessageCircle, TrendingUp, Zap, ShieldCheck, Clock, Star, ExternalLink, AlertTriangle, XCircle, Target, Layers, Rocket, Quote, Lock, Award } from "lucide-react";
+import { ArrowRight, CheckCircle2, MessageCircle, ShieldCheck, Clock, Star, ExternalLink, AlertTriangle, XCircle, Target, Layers, Rocket, Quote, Lock, Award, Send, Search, FileCheck, Flame, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BeforeAfter } from "@/components/BeforeAfter";
 import heroBg from "@/assets/landing-hero.jpg";
@@ -26,11 +26,11 @@ const Index = () => {
             <span>TheHeroes<span className="text-primary">.</span>Agency</span>
           </a>
           <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
-            <a href="#proof" className="hover:text-foreground transition">Proof</a>
             <a href="#problem" className="hover:text-foreground transition">Problem</a>
             <a href="#solution" className="hover:text-foreground transition">Solution</a>
+            <a href="#proof" className="hover:text-foreground transition">Proof</a>
+            <a href="#how" className="hover:text-foreground transition">How it works</a>
             <a href="#offer" className="hover:text-foreground transition">Free Audit</a>
-            <a href="#faq" className="hover:text-foreground transition">FAQ</a>
           </nav>
           <Button asChild size="sm" className="gradient-sky text-primary-foreground sky-glow rounded-full px-5">
             <a href="#offer">Get Free Audit</a>
@@ -61,30 +61,29 @@ const Index = () => {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-60"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
                 </span>
-                Shopify Experts since 2016 · 120+ stores shipped
+                Trusted by growing ecommerce brands
               </div>
 
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] font-bold leading-[1.05] md:leading-[1.02] tracking-tight mb-7">
-                We turn underperforming Shopify stores into{" "}
-                <span className="font-serif-display text-gradient">revenue machines</span>
+                Your Shopify store isn't broken —{" "}
+                <span className="font-serif-display text-gradient">it's just not built to convert.</span>
               </h1>
 
               <p className="text-base sm:text-lg md:text-xl text-muted-foreground/90 max-w-2xl mx-auto mb-10 leading-relaxed">
-                Most stores lose 70% of buyers at the homepage. We redesign your store
-                to convert — typically lifting revenue <span className="text-foreground font-semibold">2–4×</span> within 7 days.
+                We design high-converting Shopify stores that turn visitors into{" "}
+                <span className="text-foreground font-semibold">paying customers</span> — usually within 7 days.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center w-full sm:w-auto">
                 <Button asChild size="lg" className="gradient-sky text-primary-foreground sky-glow text-base h-14 px-6 sm:px-8 rounded-full font-semibold w-full sm:w-auto">
                   <a href="#offer">
-                    Get My Free Store Audit
+                    Get Free Store Audit
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </a>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="text-base h-14 px-6 sm:px-8 rounded-full border-white/15 bg-white/[0.02] hover:bg-white/[0.06] backdrop-blur-md w-full sm:w-auto">
-                  <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-                    <MessageCircle className="mr-2 w-5 h-5" />
-                    Chat on WhatsApp
+                  <a href="#how">
+                    See How It Works
                   </a>
                 </Button>
               </div>
@@ -143,8 +142,85 @@ const Index = () => {
           </div>
         </section>
 
+        {/* PROBLEM */}
+        <section id="problem" className="py-24 md:py-32 border-y border-white/[0.06] bg-card/20 relative overflow-hidden">
+          <div className="pointer-events-none absolute inset-0 grid-bg opacity-30" />
+          <div className="container relative">
+            <div className="max-w-2xl mx-auto text-center mb-14">
+              <p className="text-primary text-xs font-semibold tracking-[0.25em] uppercase mb-4">— The Problem</p>
+              <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-5">
+                Why most Shopify stores <span className="font-serif-display text-gradient">don't make sales</span>
+              </h2>
+              <p className="text-muted-foreground text-lg">
+                You're getting traffic… but no sales. Here's what's quietly killing your conversion rate:
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+              {[
+                { i: XCircle, t: "Poor store design that kills trust", d: "Generic themes, weak branding, and cluttered layouts make buyers bounce within seconds." },
+                { i: AlertTriangle, t: "Confusing product pages", d: "Walls of text, no benefit grid, no social proof — visitors leave without ever hitting add-to-cart." },
+                { i: Target, t: "No conversion strategy", d: "You're guessing what works. No A/B tests, no funnel logic, no plan to turn clicks into revenue." },
+                { i: Smartphone, t: "Slow, unoptimized mobile layout", d: "70% of your traffic is mobile. Slow load times and broken layouts cost you sales every single day." },
+              ].map(({ i: Icon, t, d }) => (
+                <div key={t} className="relative rounded-2xl p-7 glass hover-lift ring-gradient">
+                  <div className="w-11 h-11 rounded-xl bg-destructive/15 text-destructive flex items-center justify-center mb-5">
+                    <Icon className="w-5 h-5" />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2 tracking-tight">{t}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{d}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-center text-foreground/90 mt-12 max-w-xl mx-auto text-lg">
+              <span className="font-serif-display text-gradient text-xl">"You're getting traffic… but no sales."</span>
+              <br />
+              <span className="text-muted-foreground text-base">Sound familiar? You're not alone — and it's fixable.</span>
+            </p>
+          </div>
+        </section>
+
+        {/* SOLUTION */}
+        <section id="solution" className="py-24 md:py-32 relative overflow-hidden">
+          <div className="pointer-events-none absolute -top-20 right-0 w-[500px] h-[500px] bg-orb opacity-50" />
+          <div className="container relative">
+            <div className="max-w-2xl mx-auto text-center mb-14">
+              <p className="text-primary text-xs font-semibold tracking-[0.25em] uppercase mb-4">— Our Solution</p>
+              <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-5">
+                We fix what's stopping your store <span className="font-serif-display text-gradient">from selling</span>
+              </h2>
+              <p className="text-muted-foreground text-lg">
+                We don't just make it pretty. We rebuild your store around one goal: revenue per visitor.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+              {[
+                { i: Target, t: "Conversion-focused design", d: "Every section earns its place. We design backwards from the checkout — not from a Dribbble shot." },
+                { i: Layers, t: "Optimized product pages", d: "Benefit grids, social proof, urgency, FAQ — PDPs engineered to push add-to-cart rates above 8%." },
+                { i: Smartphone, t: "Mobile-first experience", d: "Sub-2-second mobile load. Thumb-friendly UI. Shop Pay one-tap checkout. Built for where your buyers actually are." },
+                { i: Rocket, t: "Strategic layout for higher sales", d: "A funnel-driven layout that guides visitors from curiosity to checkout — without friction or distraction." },
+              ].map(({ i: Icon, t, d }) => (
+                <div key={t} className="glass rounded-2xl p-8 hover-lift ring-gradient">
+                  <div className="w-12 h-12 rounded-xl gradient-sky text-primary-foreground flex items-center justify-center mb-6 sky-glow">
+                    <Icon className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2 tracking-tight">{t}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{d}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-12 text-center">
+              <Button asChild size="lg" className="gradient-sky text-primary-foreground sky-glow text-base h-14 px-8 rounded-full font-semibold">
+                <a href="#offer">
+                  Get My Free Audit
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </a>
+              </Button>
+            </div>
+          </div>
+        </section>
+
         {/* PROOF */}
-        <section id="proof" className="py-24 md:py-32 relative">
+        <section id="proof" className="py-24 md:py-32 relative border-y border-white/[0.06] bg-card/20">
           <div className="pointer-events-none absolute top-1/2 -left-40 w-[500px] h-[500px] bg-orb opacity-60" />
           <div className="container">
             <div className="max-w-2xl mx-auto text-center mb-16">
@@ -299,171 +375,6 @@ const Index = () => {
           </div>
         </section>
 
-        {/* TESTIMONIALS / TRUST */}
-        <section className="py-20 md:py-28 border-y border-white/[0.06] bg-card/20 relative">
-          <div className="container">
-            <div className="max-w-2xl mx-auto text-center mb-12">
-              <p className="text-primary text-xs font-semibold tracking-[0.25em] uppercase mb-4">— Founders we've helped</p>
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
-                What our clients <span className="font-serif-display text-gradient">actually say</span>
-              </h2>
-            </div>
-            <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-              {[
-                {
-                  q: "They rebuilt our PDP and we 2.6×'d our conversion rate in the first month. Best money we never spent — the audit alone was worth thousands.",
-                  n: "Marcus T.",
-                  r: "Founder, DTC Wellness Brand",
-                },
-                {
-                  q: "Honest, fast, and zero pushy upsell. They flagged 11 issues on our store, fixed 8 in a week, and our Shopify revenue jumped from $42k to $118k/mo.",
-                  n: "Aïsha L.",
-                  r: "CEO, Haircare Brand (8-figure)",
-                },
-                {
-                  q: "We'd worked with 3 'Shopify experts' before TheHeroes. They're the only ones who actually understood Liquid, Recharge, and Klaviyo as one system.",
-                  n: "Daniel R.",
-                  r: "COO, Subscription Coffee",
-                },
-              ].map((t) => (
-                <div key={t.n} className="glass rounded-2xl p-7 ring-gradient flex flex-col">
-                  <Quote className="w-7 h-7 text-primary/70 mb-4" />
-                  <p className="text-foreground/90 leading-relaxed mb-6 text-[15px]">"{t.q}"</p>
-                  <div className="mt-auto pt-4 border-t border-white/[0.06]">
-                    <div className="flex items-center gap-1 text-[hsl(var(--gold))] mb-2">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-3.5 h-3.5 fill-current" />
-                      ))}
-                    </div>
-                    <div className="font-semibold text-sm">{t.n}</div>
-                    <div className="text-xs text-muted-foreground">{t.r}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Trust bar */}
-            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
-              {[
-                { i: Award, t: "Shopify Experts", d: "Since 2016" },
-                { i: ShieldCheck, t: "NDA on request", d: "Your data stays private" },
-                { i: Lock, t: "Secure & GDPR", d: "Encrypted handoff" },
-                { i: Clock, t: "12h response", d: "Real humans, real fast" },
-              ].map(({ i: Icon, t, d }) => (
-                <div key={t} className="glass rounded-xl p-4 flex items-center gap-3 ring-gradient">
-                  <div className="w-10 h-10 rounded-lg gradient-sky text-primary-foreground flex items-center justify-center shrink-0">
-                    <Icon className="w-5 h-5" />
-                  </div>
-                  <div className="min-w-0">
-                    <div className="text-sm font-semibold truncate">{t}</div>
-                    <div className="text-xs text-muted-foreground truncate">{d}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* PROBLEM */}
-        <section id="problem" className="py-24 md:py-32 border-y border-white/[0.06] bg-card/20 relative overflow-hidden">
-          <div className="pointer-events-none absolute inset-0 grid-bg opacity-30" />
-          <div className="container relative">
-            <div className="max-w-2xl mx-auto text-center mb-14">
-              <p className="text-primary text-xs font-semibold tracking-[0.25em] uppercase mb-4">— The Problem</p>
-              <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-5">
-                Why most Shopify stores <span className="font-serif-display text-gradient">quietly fail</span>
-              </h2>
-              <p className="text-muted-foreground text-lg">
-                You're driving traffic. You're spending on ads. But the sales just aren't landing.
-                Here's what's actually killing your conversion rate:
-              </p>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-              {[
-                { i: XCircle, t: "Generic theme, zero identity", d: "Your store looks like 10,000 others. Buyers can't tell why they should trust you over a competitor." },
-                { i: AlertTriangle, t: "Weak hero & unclear offer", d: "Visitors don't understand what you sell or why they should care — within 3 seconds, they bounce." },
-                { i: Clock, t: "Slow mobile load times", d: "70% of your traffic is mobile. Every extra second of load time costs you ~7% of conversions." },
-                { i: TrendingUp, t: "No real social proof", d: "No reviews, no UGC, no founder story. Buyers have no reason to trust you with their card." },
-                { i: ShieldCheck, t: "PDPs that leak buyers", d: "Walls of text, no benefit grid, no FAQ, no urgency. Add-to-cart rates stay below 3%." },
-                { i: Zap, t: "Checkout friction", d: "Forced account creation, no Shop Pay, surprise shipping costs — 68% of carts get abandoned." },
-              ].map(({ i: Icon, t, d }) => (
-                <div key={t} className="relative rounded-2xl p-7 glass hover-lift ring-gradient">
-                  <div className="w-11 h-11 rounded-xl bg-destructive/15 text-destructive flex items-center justify-center mb-5">
-                    <Icon className="w-5 h-5" />
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2 tracking-tight">{t}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{d}</p>
-                </div>
-              ))}
-            </div>
-            <p className="text-center text-muted-foreground mt-12 max-w-xl mx-auto">
-              The good news? Every one of these is fixable — usually within <span className="text-foreground font-semibold">7 days</span>.
-            </p>
-          </div>
-        </section>
-
-        {/* SOLUTION */}
-        <section id="solution" className="py-24 md:py-32 relative overflow-hidden">
-          <div className="pointer-events-none absolute -top-20 right-0 w-[500px] h-[500px] bg-orb opacity-50" />
-          <div className="container relative">
-            <div className="max-w-2xl mx-auto text-center mb-14">
-              <p className="text-primary text-xs font-semibold tracking-[0.25em] uppercase mb-4">— Our Solution</p>
-              <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-5">
-                What we do <span className="font-serif-display text-gradient">differently</span>
-              </h2>
-              <p className="text-muted-foreground text-lg">
-                We don't just "make it pretty." We rebuild your store around one goal: revenue per visitor.
-              </p>
-            </div>
-            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-              {[
-                { i: Target, t: "Conversion-first design", d: "Every section earns its place. We design backwards from the checkout — not from a Dribbble shot." },
-                { i: Layers, t: "Built for Shopify, not on it", d: "Custom Liquid, Recharge subscriptions, Klaviyo flows, Shop Pay — your stack works as one system." },
-                { i: Rocket, t: "Speed-obsessed engineering", d: "Sub-2-second mobile load. Lazy images, optimized Liquid, zero bloat apps. Core Web Vitals: green." },
-                { i: ShieldCheck, t: "Data-driven, not opinion-driven", d: "We A/B test hero, PDP, and checkout. Decisions come from your data — not from our taste." },
-              ].map(({ i: Icon, t, d }) => (
-                <div key={t} className="glass rounded-2xl p-8 hover-lift ring-gradient">
-                  <div className="w-12 h-12 rounded-xl gradient-sky text-primary-foreground flex items-center justify-center mb-6 sky-glow">
-                    <Icon className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2 tracking-tight">{t}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{d}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* WHAT YOU GET */}
-        <section className="py-24 md:py-28 border-y border-white/[0.06] bg-card/20">
-          <div className="container">
-            <div className="max-w-2xl mx-auto text-center mb-14">
-              <p className="text-primary text-xs font-semibold tracking-[0.25em] uppercase mb-4">— Deliverables</p>
-              <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-5">
-                What you <span className="font-serif-display text-gradient">actually get</span>
-              </h2>
-              <p className="text-muted-foreground text-lg">
-                A 15-page audit + a free 1:1 strategy call. No fluff, no obligation.
-              </p>
-            </div>
-            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              {[
-                { i: TrendingUp, t: "Conversion teardown", d: "Page-by-page breakdown of where you're losing buyers — with screenshots and fixes." },
-                { i: Zap, t: "Speed & UX report", d: "Mobile speed score, Core Web Vitals, and the top 5 UX leaks costing you sales." },
-                { i: ShieldCheck, t: "Personalized roadmap", d: "A prioritized 90-day action plan you can implement yourself or hand to your team." },
-              ].map(({ i: Icon, t, d }) => (
-                <div key={t} className="glass rounded-2xl p-8 hover-lift ring-gradient">
-                  <div className="w-12 h-12 rounded-xl gradient-sky text-primary-foreground flex items-center justify-center mb-6 sky-glow">
-                    <Icon className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2 tracking-tight">{t}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{d}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* OFFER / CTA */}
         <section id="offer" className="py-24 md:py-32 relative overflow-hidden">
           <div className="absolute inset-0 bg-glow-radial" />
@@ -475,21 +386,29 @@ const Index = () => {
                 <div className="absolute inset-x-0 top-0 h-px shimmer" />
                 <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[hsl(var(--gold))]/10 border border-[hsl(var(--gold))]/30 text-sm font-semibold mb-6">
                   <Star className="w-3.5 h-3.5 fill-[hsl(var(--gold))] text-[hsl(var(--gold))]" />
-                  <span className="text-gradient-gold">Limited — 5 audits per month</span>
+                  <span className="text-gradient-gold">Limited — only 5 audits per week</span>
                 </div>
                 <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-5 leading-[1.05]">
-                  Free Shopify <span className="font-serif-display text-gradient">Store Audit</span>
+                  Get a FREE <span className="font-serif-display text-gradient">Shopify Store Audit</span>
                 </h2>
-                <p className="text-muted-foreground text-lg md:text-xl mb-8 max-w-xl mx-auto leading-relaxed">
-                  Get a full conversion teardown + a free homepage redesign preview.
-                  <span className="text-foreground font-medium"> Worth $750</span> — yours free.
-                </p>
+                <ul className="text-left max-w-md mx-auto space-y-3 mb-8 text-foreground/90">
+                  {[
+                    "We analyze your store top to bottom",
+                    "Identify the exact conversion problems",
+                    "Give you actionable improvements you can ship today",
+                  ].map((t) => (
+                    <li key={t} className="flex items-start gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                      <span>{t}</span>
+                    </li>
+                  ))}
+                </ul>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                 <Button asChild size="lg" className="gradient-sky text-primary-foreground sky-glow text-base h-14 px-8 rounded-full font-semibold">
                   <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
-                    <Calendar className="mr-2 w-5 h-5" />
-                    Book a Call
+                    Get My Free Audit
+                    <ArrowRight className="ml-2 w-5 h-5" />
                   </a>
                 </Button>
                 <Button
@@ -514,6 +433,126 @@ const Index = () => {
           </div>
         </section>
 
+        {/* HOW IT WORKS */}
+        <section id="how" className="py-24 md:py-32 border-y border-white/[0.06] bg-card/20 relative overflow-hidden">
+          <div className="pointer-events-none absolute inset-0 grid-bg opacity-30" />
+          <div className="container relative">
+            <div className="max-w-2xl mx-auto text-center mb-14">
+              <p className="text-primary text-xs font-semibold tracking-[0.25em] uppercase mb-4">— How it works</p>
+              <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-5">
+                Three steps to a <span className="font-serif-display text-gradient">store that sells</span>
+              </h2>
+              <p className="text-muted-foreground text-lg">
+                No long onboarding. No 50-page forms. Just send your URL — we do the rest.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              {[
+                { i: Send, n: "01", t: "Submit your store", d: "Click below and send us your Shopify URL. Takes 30 seconds." },
+                { i: Search, n: "02", t: "We review & analyze", d: "Our team audits your design, PDPs, mobile speed and funnel — by hand, not by bot." },
+                { i: FileCheck, n: "03", t: "Get your audit + action plan", d: "Within 12 hours you receive a full video walkthrough plus a prioritized action plan." },
+              ].map(({ i: Icon, n, t, d }) => (
+                <div key={t} className="relative glass rounded-2xl p-8 hover-lift ring-gradient">
+                  <div className="absolute top-5 right-6 text-5xl font-bold text-white/[0.04] tracking-tighter">{n}</div>
+                  <div className="relative w-12 h-12 rounded-xl gradient-sky text-primary-foreground flex items-center justify-center mb-6 sky-glow">
+                    <Icon className="w-6 h-6" />
+                  </div>
+                  <h3 className="relative text-xl font-semibold mb-2 tracking-tight">{t}</h3>
+                  <p className="relative text-muted-foreground leading-relaxed">{d}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-12 text-center">
+              <Button asChild size="lg" className="gradient-sky text-primary-foreground sky-glow text-base h-14 px-8 rounded-full font-semibold">
+                <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+                  Submit my store
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </a>
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* TRUST / TESTIMONIALS */}
+        <section className="py-24 md:py-32 relative">
+          <div className="pointer-events-none absolute -top-20 right-0 w-[500px] h-[500px] bg-orb opacity-40" />
+          <div className="container relative">
+            <div className="max-w-2xl mx-auto text-center mb-12">
+              <p className="text-primary text-xs font-semibold tracking-[0.25em] uppercase mb-4">— Trusted by ecommerce founders</p>
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
+                What our clients <span className="font-serif-display text-gradient">actually say</span>
+              </h2>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              {[
+                { q: "They rebuilt our PDP and we 2.6×'d our conversion rate in the first month. The audit alone was worth thousands.", n: "Marcus T.", r: "Founder, DTC Wellness Brand" },
+                { q: "Honest, fast, zero pushy upsell. They flagged 11 issues, fixed 8 in a week — Shopify revenue jumped from $42k to $118k/mo.", n: "Aïsha L.", r: "CEO, Haircare Brand" },
+                { q: "We'd worked with 3 'Shopify experts' before. They're the only ones who actually understood Liquid, Recharge and Klaviyo as one system.", n: "Daniel R.", r: "COO, Subscription Coffee" },
+              ].map((t) => (
+                <div key={t.n} className="glass rounded-2xl p-7 ring-gradient flex flex-col">
+                  <Quote className="w-7 h-7 text-primary/70 mb-4" />
+                  <p className="text-foreground/90 leading-relaxed mb-6 text-[15px]">"{t.q}"</p>
+                  <div className="mt-auto pt-4 border-t border-white/[0.06]">
+                    <div className="flex items-center gap-1 text-[hsl(var(--gold))] mb-2">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-3.5 h-3.5 fill-current" />
+                      ))}
+                    </div>
+                    <div className="font-semibold text-sm">{t.n}</div>
+                    <div className="text-xs text-muted-foreground">{t.r}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Trust badges */}
+            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
+              {[
+                { i: Award, t: "Shopify Experts", d: "Since 2016" },
+                { i: ShieldCheck, t: "NDA on request", d: "Your data stays private" },
+                { i: Lock, t: "Secure & GDPR", d: "Encrypted handoff" },
+                { i: Clock, t: "12h response", d: "Real humans, real fast" },
+              ].map(({ i: Icon, t, d }) => (
+                <div key={t} className="glass rounded-xl p-4 flex items-center gap-3 ring-gradient">
+                  <div className="w-10 h-10 rounded-lg gradient-sky text-primary-foreground flex items-center justify-center shrink-0">
+                    <Icon className="w-5 h-5" />
+                  </div>
+                  <div className="min-w-0">
+                    <div className="text-sm font-semibold truncate">{t}</div>
+                    <div className="text-xs text-muted-foreground truncate">{d}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* URGENCY */}
+        <section className="py-20 md:py-24 border-y border-white/[0.06] bg-card/30 relative overflow-hidden">
+          <div className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 h-[400px] bg-orb opacity-50" />
+          <div className="container relative">
+            <div className="max-w-3xl mx-auto text-center">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-destructive/10 border border-destructive/30 text-sm font-semibold mb-6">
+                <Flame className="w-4 h-4 text-destructive" />
+                <span className="text-destructive">Only 5 spots open this week</span>
+              </div>
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-5">
+                We only take a <span className="font-serif-display text-gradient">limited number</span> of clients per week
+              </h2>
+              <p className="text-muted-foreground text-lg mb-8 max-w-xl mx-auto">
+                Each audit takes 4–6 hours of real, hands-on work — so we cap intake to keep quality high.
+                If you wait, the next slot is two weeks out.
+              </p>
+              <Button asChild size="lg" className="gradient-sky text-primary-foreground sky-glow text-base h-14 px-8 rounded-full font-semibold">
+                <a href="#offer">
+                  Claim my spot now
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </a>
+              </Button>
+            </div>
+          </div>
+        </section>
+
         {/* FAQ */}
         <section id="faq" className="py-24 md:py-28 border-t border-white/[0.06]">
           <div className="container max-w-3xl">
@@ -525,7 +564,7 @@ const Index = () => {
             </div>
             <div className="space-y-4">
               {[
-                { q: "Is the audit really free?", a: "Yes — 100% free, no credit card. We do 5 per month because each one takes 4–6 hours of real work." },
+                { q: "Is the audit really free?", a: "Yes — 100% free, no credit card. We do 5 per week because each one takes 4–6 hours of real work." },
                 { q: "What do I need to send you?", a: "Just your store URL. We do the rest." },
                 { q: "Will you try to upsell me?", a: "We'll show you exactly what's broken. If you want help fixing it, we'll quote you. If not, you keep the audit. No pressure." },
                 { q: "How fast do I get it?", a: "Within 12 hours of booking, including a recorded video walkthrough." },
@@ -543,15 +582,15 @@ const Index = () => {
             {/* FINAL CTA */}
             <div className="mt-24 text-center">
               <h3 className="text-3xl md:text-5xl font-bold tracking-tight mb-5">
-                Ready to see what your store <span className="font-serif-display text-gradient">could do?</span>
+                Fix my store <span className="font-serif-display text-gradient">now.</span>
               </h3>
               <p className="text-muted-foreground text-lg mb-8 max-w-xl mx-auto">
-                Claim your free Shopify audit today. 12-hour delivery. Zero obligation.
+                Get your free Shopify audit today. 12-hour delivery. Zero obligation.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild size="lg" className="gradient-sky text-primary-foreground sky-glow text-base h-14 px-8 rounded-full font-semibold">
                   <a href="#offer">
-                    Get My Free Audit
+                    Get Free Audit
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </a>
                 </Button>
@@ -562,7 +601,7 @@ const Index = () => {
                 >
                   <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="mr-2 w-5 h-5" />
-                    WhatsApp Us
+                    Chat on WhatsApp
                   </a>
                 </Button>
               </div>
