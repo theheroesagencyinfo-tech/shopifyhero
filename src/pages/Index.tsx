@@ -142,6 +142,36 @@ const Index = () => {
           </div>
         </section>
 
+        {/* EMOTIONAL HOOK */}
+        <section className="relative py-20 md:py-28 overflow-hidden border-y border-white/[0.06]">
+          <div className="absolute inset-0 bg-gradient-to-b from-destructive/[0.06] via-background to-background" />
+          <div className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 h-[420px] bg-orb opacity-40" />
+          <div className="container relative">
+            <div className="relative max-w-3xl mx-auto text-center">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-destructive/10 border border-destructive/30 text-xs font-semibold mb-6 text-destructive uppercase tracking-[0.2em]">
+                <AlertTriangle className="w-3.5 h-3.5" />
+                The hard truth
+              </div>
+              <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.05] mb-6">
+                You're Getting Traffic…{" "}
+                <span className="font-serif-display text-gradient">But No Sales.</span>
+              </h2>
+              <p className="text-lg md:text-xl text-muted-foreground/95 leading-relaxed max-w-2xl mx-auto mb-8">
+                Most Shopify stores don't fail because of bad products — they fail because of{" "}
+                <span className="text-foreground font-semibold">poor design</span>,{" "}
+                <span className="text-foreground font-semibold">weak trust</span>, and{" "}
+                <span className="text-foreground font-semibold">no conversion strategy</span>.
+              </p>
+              <Button asChild size="lg" className="gradient-sky text-primary-foreground sky-glow text-base h-14 px-8 rounded-full font-semibold">
+                <a href="#offer">
+                  See What's Killing My Sales
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </a>
+              </Button>
+            </div>
+          </div>
+        </section>
+
         {/* PROBLEM */}
         <section id="problem" className="py-24 md:py-32 border-y border-white/[0.06] bg-card/20 relative overflow-hidden">
           <div className="pointer-events-none absolute inset-0 grid-bg opacity-30" />
@@ -581,16 +611,17 @@ const Index = () => {
 
             {/* FINAL CTA */}
             <div className="mt-24 text-center">
-              <h3 className="text-3xl md:text-5xl font-bold tracking-tight mb-5">
-                Fix my store <span className="font-serif-display text-gradient">now.</span>
+              <h3 className="text-3xl md:text-5xl font-bold tracking-tight mb-5 leading-[1.05]">
+                Stop Losing Sales —{" "}
+                <span className="font-serif-display text-gradient">Fix Your Store Today.</span>
               </h3>
               <p className="text-muted-foreground text-lg mb-8 max-w-xl mx-auto">
-                Get your free Shopify audit today. 12-hour delivery. Zero obligation.
+                Get a free audit and discover exactly what's holding your store back. 12-hour delivery. Zero obligation.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild size="lg" className="gradient-sky text-primary-foreground sky-glow text-base h-14 px-8 rounded-full font-semibold">
                   <a href="#offer">
-                    Get Free Audit
+                    Get Free Audit Now
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </a>
                 </Button>
@@ -609,6 +640,22 @@ const Index = () => {
           </div>
         </section>
       </main>
+
+      {/* FLOATING WHATSAPP CTA */}
+      <a
+        href={WHATSAPP_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat on WhatsApp"
+        className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 pl-4 pr-5 h-14 rounded-full bg-[hsl(var(--whatsapp))] hover:bg-[hsl(var(--whatsapp))]/90 text-white font-semibold shadow-[0_10px_40px_-10px_hsl(var(--whatsapp)/0.7)] transition-transform hover:scale-105"
+      >
+        <span className="relative flex h-2.5 w-2.5">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white/70 opacity-70"></span>
+          <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-white"></span>
+        </span>
+        <MessageCircle className="w-5 h-5" />
+        <span className="hidden sm:inline text-sm">Chat on WhatsApp</span>
+      </a>
 
       {/* FOOTER */}
       <footer className="border-t border-white/[0.06] py-10">
