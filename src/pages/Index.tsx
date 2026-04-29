@@ -61,30 +61,29 @@ const Index = () => {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-60"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
                 </span>
-                Shopify Experts since 2016 · 120+ stores shipped
+                Trusted by growing ecommerce brands
               </div>
 
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] font-bold leading-[1.05] md:leading-[1.02] tracking-tight mb-7">
-                We turn underperforming Shopify stores into{" "}
-                <span className="font-serif-display text-gradient">revenue machines</span>
+                Your Shopify store isn't broken —{" "}
+                <span className="font-serif-display text-gradient">it's just not built to convert.</span>
               </h1>
 
               <p className="text-base sm:text-lg md:text-xl text-muted-foreground/90 max-w-2xl mx-auto mb-10 leading-relaxed">
-                Most stores lose 70% of buyers at the homepage. We redesign your store
-                to convert — typically lifting revenue <span className="text-foreground font-semibold">2–4×</span> within 7 days.
+                We design high-converting Shopify stores that turn visitors into{" "}
+                <span className="text-foreground font-semibold">paying customers</span> — usually within 7 days.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center w-full sm:w-auto">
                 <Button asChild size="lg" className="gradient-sky text-primary-foreground sky-glow text-base h-14 px-6 sm:px-8 rounded-full font-semibold w-full sm:w-auto">
                   <a href="#offer">
-                    Get My Free Store Audit
+                    Get Free Store Audit
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </a>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="text-base h-14 px-6 sm:px-8 rounded-full border-white/15 bg-white/[0.02] hover:bg-white/[0.06] backdrop-blur-md w-full sm:w-auto">
-                  <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-                    <MessageCircle className="mr-2 w-5 h-5" />
-                    Chat on WhatsApp
+                  <a href="#how">
+                    See How It Works
                   </a>
                 </Button>
               </div>
