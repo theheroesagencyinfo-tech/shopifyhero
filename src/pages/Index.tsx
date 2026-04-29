@@ -1,4 +1,4 @@
-import { ArrowRight, Calendar, CheckCircle2, MessageCircle, TrendingUp, Zap, ShieldCheck, Clock, Star, ExternalLink, AlertTriangle, XCircle, Target, Layers, Rocket, Quote, Lock, Award } from "lucide-react";
+import { ArrowRight, Calendar, CheckCircle2, MessageCircle, TrendingUp, Zap, ShieldCheck, Clock, Star, ExternalLink, AlertTriangle, XCircle, Target, Layers, Rocket, Quote, Lock, Award, Send, Search, FileCheck, Flame, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BeforeAfter } from "@/components/BeforeAfter";
 import heroBg from "@/assets/landing-hero.jpg";
@@ -26,11 +26,11 @@ const Index = () => {
             <span>TheHeroes<span className="text-primary">.</span>Agency</span>
           </a>
           <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
-            <a href="#proof" className="hover:text-foreground transition">Proof</a>
             <a href="#problem" className="hover:text-foreground transition">Problem</a>
             <a href="#solution" className="hover:text-foreground transition">Solution</a>
+            <a href="#proof" className="hover:text-foreground transition">Proof</a>
+            <a href="#how" className="hover:text-foreground transition">How it works</a>
             <a href="#offer" className="hover:text-foreground transition">Free Audit</a>
-            <a href="#faq" className="hover:text-foreground transition">FAQ</a>
           </nav>
           <Button asChild size="sm" className="gradient-sky text-primary-foreground sky-glow rounded-full px-5">
             <a href="#offer">Get Free Audit</a>
