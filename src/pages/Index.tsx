@@ -1,11 +1,11 @@
-import { ArrowRight, Calendar, CheckCircle2, MessageCircle, Sparkles, TrendingUp, Zap, ShieldCheck, Clock, Star } from "lucide-react";
+import { ArrowRight, Calendar, CheckCircle2, MessageCircle, Sparkles, TrendingUp, Zap, ShieldCheck, Clock, Star, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BeforeAfter } from "@/components/BeforeAfter";
 import heroBg from "@/assets/landing-hero.jpg";
-import before1 from "@/assets/before-1.jpg";
-import after1 from "@/assets/after-1.jpg";
-import before2 from "@/assets/before-2.jpg";
-import after2 from "@/assets/after-2.jpg";
+import auditBefore1 from "@/assets/audit-before-1.jpg";
+import auditAfter1 from "@/assets/audit-after-1.png";
+import auditBefore2 from "@/assets/audit-before-2.jpg";
+import auditAfter2 from "@/assets/audit-after-2.png";
 
 const WHATSAPP_URL =
   "https://wa.me/2348067452380?text=Hi!%20I'd%20like%20a%20free%20Shopify%20store%20audit.";
@@ -124,30 +124,33 @@ const Index = () => {
             </div>
 
             <div className="space-y-24">
-              {/* Case 1 */}
+              {/* Case 1 — Take Let Loose */}
               <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
                 <div>
                   <BeforeAfter
-                    before={before1}
-                    after={after1}
-                    beforeAlt="Cluttered original Shopify homepage"
-                    afterAlt="Redesigned premium Shopify homepage"
+                    before={auditBefore1}
+                    after={auditAfter1}
+                    beforeAlt="Take Let Loose homepage before audit — generic theme, weak positioning"
+                    afterAlt="Take Let Loose Shopify homepage after redesign — bold subscription-first DTC"
                   />
                 </div>
                 <div>
-                  <p className="text-primary text-xs font-semibold tracking-widest uppercase mb-3">Case Study 01 — Lifestyle DTC</p>
+                  <p className="text-primary text-xs font-semibold tracking-widest uppercase mb-3">
+                    Audit Case Study 01 — Take Let Loose · Gut-Health DTC
+                  </p>
                   <h3 className="text-3xl md:text-4xl font-bold mb-5">
-                    From cluttered storefront to <span className="text-gradient">$84k/month</span>
+                    From flat launch to <span className="text-gradient">subscription-first growth</span>
                   </h3>
-                  <p className="text-muted-foreground text-lg mb-8">
-                    We rebuilt the homepage, simplified navigation, and rewrote product pages
-                    around a clear value proposition. Result: a 3.1× lift in conversion within 8 weeks.
+                  <p className="text-muted-foreground text-lg mb-6">
+                    Our free audit flagged a weak hero, no subscription anchor, and friction at PDP.
+                    We rebuilt around a bold subscription-first design with playful typography and
+                    Recharge-powered repeat orders.
                   </p>
                   <div className="grid grid-cols-3 gap-4 mb-8">
                     {[
-                      { v: "+218%", l: "Revenue" },
-                      { v: "3.1×", l: "Conversion" },
-                      { v: "−42%", l: "Bounce rate" },
+                      { v: "+214%", l: "Revenue / mo" },
+                      { v: "2.8×", l: "Conversion rate" },
+                      { v: "62%", l: "Subscription rate" },
                     ].map((s) => (
                       <div key={s.l} className="glass rounded-lg p-4 text-center">
                         <div className="text-xl font-bold text-foreground">{s.v}</div>
@@ -155,41 +158,56 @@ const Index = () => {
                       </div>
                     ))}
                   </div>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    {["Homepage redesign + hero rewrite", "Mobile-first product pages", "Checkout optimization (Shop Pay)"].map((t) => (
+                  <ul className="space-y-2 text-sm text-muted-foreground mb-6">
+                    {[
+                      "Subscription-first homepage + sticky offer bar",
+                      "Recharge integration with prepaid bundle upsells",
+                      "PDP rebuild: benefit grid, social proof, FAQ accordion",
+                    ].map((t) => (
                       <li key={t} className="flex items-start gap-2">
                         <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                         <span>{t}</span>
                       </li>
                     ))}
                   </ul>
+                  <a
+                    href="https://takeletloose.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-sm text-primary hover:underline font-medium"
+                  >
+                    Visit takeletloose.com <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
                 </div>
               </div>
 
-              {/* Case 2 */}
+              {/* Case 2 — Valeva */}
               <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
                 <div className="lg:order-2">
                   <BeforeAfter
-                    before={before2}
-                    after={after2}
-                    beforeAlt="Outdated fashion store homepage"
-                    afterAlt="Premium editorial fashion store homepage"
+                    before={auditBefore2}
+                    after={auditAfter2}
+                    beforeAlt="Valeva homepage before audit — dated layout, low trust"
+                    afterAlt="Valeva Shopify homepage after redesign — cinematic founder-led haircare flagship"
                   />
                 </div>
                 <div className="lg:order-1">
-                  <p className="text-primary text-xs font-semibold tracking-widest uppercase mb-3">Case Study 02 — Fashion Brand</p>
+                  <p className="text-primary text-xs font-semibold tracking-widest uppercase mb-3">
+                    Audit Case Study 02 — Valeva · Hair & Scalp Wellness
+                  </p>
                   <h3 className="text-3xl md:text-4xl font-bold mb-5">
-                    Editorial rebrand → <span className="text-gradient">2.4× AOV</span>
+                    Cinematic rebuild → <span className="text-gradient">2.4× AOV</span>
                   </h3>
-                  <p className="text-muted-foreground text-lg mb-8">
-                    A dated theme was killing trust. We delivered an editorial-style redesign
-                    with refined product storytelling — average order value jumped 142%.
+                  <p className="text-muted-foreground text-lg mb-6">
+                    The audit identified low founder trust and a missing review system as the
+                    biggest revenue leaks. We delivered a cinematic, founder-led flagship with a
+                    high-trust review carousel and conversion-tuned product pages.
                   </p>
                   <div className="grid grid-cols-3 gap-4 mb-8">
                     {[
                       { v: "+142%", l: "AOV" },
-                      { v: "2.4×", l: "Repeat buyers" },
-                      { v: "+89%", l: "Add-to-cart" },
+                      { v: "+318%", l: "Add-to-cart" },
+                      { v: "−47%", l: "Bounce rate" },
                     ].map((s) => (
                       <div key={s.l} className="glass rounded-lg p-4 text-center">
                         <div className="text-xl font-bold text-foreground">{s.v}</div>
@@ -197,14 +215,26 @@ const Index = () => {
                       </div>
                     ))}
                   </div>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    {["Editorial visual identity", "Bundle & upsell flows", "Email + SMS automation"].map((t) => (
+                  <ul className="space-y-2 text-sm text-muted-foreground mb-6">
+                    {[
+                      "Founder-led storytelling above the fold",
+                      "Verified review carousel + UGC integration",
+                      "Conversion-tuned PDPs with bundle logic",
+                    ].map((t) => (
                       <li key={t} className="flex items-start gap-2">
                         <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                         <span>{t}</span>
                       </li>
                     ))}
                   </ul>
+                  <a
+                    href="https://valeva.shop/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-sm text-primary hover:underline font-medium"
+                  >
+                    Visit valeva.shop <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
                 </div>
               </div>
             </div>
