@@ -58,7 +58,7 @@ const Index = () => {
 
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
                 Most stores lose 70% of buyers at the homepage. We redesign your store
-                to convert — typically lifting revenue <span className="text-foreground font-semibold">2–4×</span> within 60 days.
+                to convert — typically lifting revenue <span className="text-foreground font-semibold">2–4×</span> within 7 days.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -323,7 +323,7 @@ const Index = () => {
                 { q: "Is the audit really free?", a: "Yes — 100% free, no credit card. We do 5 per month because each one takes 4–6 hours of real work." },
                 { q: "What do I need to send you?", a: "Just your store URL. We do the rest." },
                 { q: "Will you try to upsell me?", a: "We'll show you exactly what's broken. If you want help fixing it, we'll quote you. If not, you keep the audit. No pressure." },
-                { q: "How fast do I get it?", a: "Within 48 hours of booking, including a recorded video walkthrough." },
+                { q: "How fast do I get it?", a: "Within 12 hours of booking, including a recorded video walkthrough." },
               ].map((f) => (
                 <details key={f.q} className="glass rounded-xl p-5 group">
                   <summary className="cursor-pointer font-semibold flex items-center justify-between list-none">
