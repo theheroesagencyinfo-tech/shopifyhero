@@ -622,6 +622,43 @@ const Index = () => {
           </div>
         </section>
 
+        {/* ABOUT / FOUNDER */}
+        <section className="py-24 md:py-32 relative overflow-hidden border-t border-white/[0.06]">
+          <div className="pointer-events-none absolute -top-20 -left-20 w-[460px] h-[460px] bg-orb opacity-40" />
+          <div className="container relative">
+            <div className="max-w-4xl mx-auto">
+              <div className="grid md:grid-cols-[200px_1fr] gap-8 md:gap-12 items-center">
+                <div className="relative mx-auto md:mx-0">
+                  <div className="absolute -inset-3 gradient-sky opacity-30 blur-2xl rounded-full" />
+                  <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full ring-2 ring-primary/40 bg-card flex items-center justify-center text-5xl font-bold text-gradient sky-glow overflow-hidden">
+                    HA
+                  </div>
+                </div>
+                <div>
+                  <p className="text-primary text-xs font-semibold tracking-[0.25em] uppercase mb-3">— About us</p>
+                  <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-5 leading-tight">
+                    We're a small team that <span className="font-serif-display text-gradient">obsesses over conversion</span>.
+                  </h2>
+                  <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-4">
+                    I'm Harris, founder of TheHeroes Agency. Over the last 6 years my team has rebuilt
+                    <span className="text-foreground font-semibold"> 50+ Shopify stores</span> across DTC, beauty, wellness and apparel —
+                    from scrappy first launches to 7-figure flagships.
+                  </p>
+                  <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-6">
+                    We don't chase awards or design trends. We focus on one thing: <span className="text-foreground font-semibold">revenue per visitor</span>.
+                    Every pixel, every word, every section has to earn its place — or it gets cut.
+                  </p>
+                  <div className="flex flex-wrap gap-2 text-xs">
+                    <span className="px-3 py-1.5 rounded-full glass ring-gradient flex items-center gap-1.5"><Globe className="w-3.5 h-3.5 text-primary" /> Worked with brands worldwide</span>
+                    <span className="px-3 py-1.5 rounded-full glass ring-gradient flex items-center gap-1.5"><Heart className="w-3.5 h-3.5 text-primary" /> Founder-led, no juniors</span>
+                    <span className="px-3 py-1.5 rounded-full glass ring-gradient flex items-center gap-1.5"><Award className="w-3.5 h-3.5 text-primary" /> Shopify Experts since 2016</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* URGENCY */}
         <section className="py-20 md:py-24 border-y border-white/[0.06] bg-card/30 relative overflow-hidden">
           <div className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 h-[400px] bg-orb opacity-50" />
