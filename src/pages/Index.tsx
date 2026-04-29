@@ -278,6 +278,24 @@ const Index = () => {
                 </div>
               </div>
             </div>
+
+            {/* Portfolio CTA */}
+            <div className="mt-16 md:mt-20 text-center">
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="text-base h-14 px-8 rounded-full border-white/15 bg-white/[0.03] hover:bg-white/[0.08] backdrop-blur-md font-semibold"
+              >
+                <a href={PORTFOLIO_URL} target="_blank" rel="noopener noreferrer">
+                  View Full Portfolio
+                  <ExternalLink className="ml-2 w-4 h-4" />
+                </a>
+              </Button>
+              <p className="text-xs text-muted-foreground mt-4">
+                50+ Shopify stores rebuilt across DTC, beauty, wellness & apparel.
+              </p>
+            </div>
           </div>
         </section>
 
