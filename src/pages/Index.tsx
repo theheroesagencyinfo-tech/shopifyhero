@@ -442,18 +442,30 @@ const Index = () => {
                 <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-5 leading-[1.05]">
                   Get a FREE <span className="font-serif-display text-gradient">Shopify Store Audit</span>
                 </h2>
-                <ul className="text-left max-w-md mx-auto space-y-3 mb-8 text-foreground/90">
-                  {[
-                    "We analyze your store top to bottom",
-                    "Identify the exact conversion problems",
-                    "Give you actionable improvements you can ship today",
-                  ].map((t) => (
-                    <li key={t} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                      <span>{t}</span>
-                    </li>
-                  ))}
-                </ul>
+                <p className="text-muted-foreground text-base md:text-lg max-w-xl mx-auto mb-8">
+                  A real human walks through your store on video and shows you exactly what's costing you sales.
+                </p>
+                <div className="text-left max-w-lg mx-auto mb-6">
+                  <p className="text-xs uppercase tracking-[0.25em] text-primary font-semibold mb-4">What You'll Get</p>
+                  <ul className="space-y-3 text-foreground/90">
+                    {[
+                      { t: "Full store review", d: "Complete UX + design walkthrough — homepage, PDP, cart, checkout." },
+                      { t: "Conversion issues breakdown", d: "Every leak, friction point and trust gap — ranked by revenue impact." },
+                      { t: "Personalized improvement plan", d: "A prioritized action list you can hand to your dev today." },
+                    ].map((it) => (
+                      <li key={it.t} className="flex items-start gap-3">
+                        <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                        <div>
+                          <div className="font-semibold">{it.t}</div>
+                          <div className="text-sm text-muted-foreground">{it.d}</div>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-5 text-sm text-foreground/80 italic border-l-2 border-primary/50 pl-3">
+                    No fluff. Just actionable fixes you can use immediately.
+                  </p>
+                </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                 <Button asChild size="lg" className="gradient-sky text-primary-foreground sky-glow text-base h-14 px-8 rounded-full font-semibold">
