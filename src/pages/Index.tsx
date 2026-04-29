@@ -8,9 +8,10 @@ import auditBefore2 from "@/assets/audit-before-2.jpg";
 import auditAfter2 from "@/assets/audit-after-2.png";
 
 const WHATSAPP_URL =
-  "https://wa.me/2348067452380?text=Hi!%20I'd%20like%20a%20free%20Shopify%20store%20audit.";
+  "https://wa.me/13154541290?text=Hi!%20I'd%20like%20a%20free%20Shopify%20store%20audit.";
 const CALENDLY_URL = "https://calendly.com/theheroesagency-info/30min";
 const EMAIL_URL = "mailto:info@theheroesagency.org";
+const PORTFOLIO_URL = "https://bit.ly/4w05iPa";
 
 const Index = () => {
   return (
