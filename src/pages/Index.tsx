@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle2, MessageCircle, ShieldCheck, Clock, Star, ExternalLink, AlertTriangle, XCircle, Target, Layers, Rocket, Quote, Lock, Award, Send, Search, FileCheck, Flame, Smartphone } from "lucide-react";
+import { ArrowRight, CheckCircle2, MessageCircle, ShieldCheck, Clock, Star, ExternalLink, AlertTriangle, XCircle, Target, Layers, Rocket, Quote, Lock, Award, Send, Search, FileCheck, Flame, Smartphone, Users, TrendingDown, HelpCircle, Globe, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BeforeAfter } from "@/components/BeforeAfter";
 import heroBg from "@/assets/landing-hero.jpg";
@@ -259,8 +259,9 @@ const Index = () => {
                 Real stores. <span className="font-serif-display text-gradient">Real numbers.</span>
               </h2>
               <p className="text-muted-foreground text-lg">
-                Drag the slider to see the before/after transformation on live Shopify stores.
+                Drag the slider — see the exact moment a store goes from <span className="text-foreground font-semibold">"meh"</span> to <span className="text-foreground font-semibold">built to convert</span>.
               </p>
+              <p className="mt-3 text-xs uppercase tracking-[0.25em] text-primary/80">Designed for sales, not just looks</p>
             </div>
 
             <div className="space-y-24">
@@ -276,6 +277,16 @@ const Index = () => {
                     afterAlt="Take Let Loose Shopify homepage after redesign — bold subscription-first DTC"
                   />
                   </div>
+                  <div className="mt-4 flex flex-wrap gap-2 text-xs">
+                    <span className="px-2.5 py-1 rounded-full bg-destructive/10 text-destructive border border-destructive/20 font-semibold">Before — Low Converting</span>
+                    <span className="px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 font-semibold">After — Optimized for Sales</span>
+                  </div>
+                  <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-muted-foreground">
+                    <li className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-primary shrink-0" /> Improved product page structure</li>
+                    <li className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-primary shrink-0" /> Added trust elements</li>
+                    <li className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-primary shrink-0" /> Optimized mobile layout</li>
+                    <li className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-primary shrink-0" /> Subscription-first hero</li>
+                  </ul>
                 </div>
                 <div>
                   <p className="text-primary text-xs font-semibold tracking-[0.25em] uppercase mb-4">
@@ -336,6 +347,16 @@ const Index = () => {
                     afterAlt="Valeva Shopify homepage after redesign — cinematic founder-led haircare flagship"
                   />
                   </div>
+                  <div className="mt-4 flex flex-wrap gap-2 text-xs">
+                    <span className="px-2.5 py-1 rounded-full bg-destructive/10 text-destructive border border-destructive/20 font-semibold">Before — Low Converting</span>
+                    <span className="px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 font-semibold">After — Optimized for Sales</span>
+                  </div>
+                  <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-muted-foreground">
+                    <li className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-primary shrink-0" /> Founder-led storytelling</li>
+                    <li className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-primary shrink-0" /> Verified review carousel</li>
+                    <li className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-primary shrink-0" /> Mobile-first PDP rebuild</li>
+                    <li className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-primary shrink-0" /> Bundle + AOV upsells</li>
+                  </ul>
                 </div>
                 <div className="lg:order-1">
                   <p className="text-primary text-xs font-semibold tracking-[0.25em] uppercase mb-4">
