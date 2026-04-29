@@ -16,9 +16,12 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* NAV */}
-      <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border">
+      <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-background/60 border-b border-white/[0.06]">
         <div className="container flex items-center justify-between h-16">
-          <a href="#top" className="flex items-center gap-2 font-bold text-lg">
+          <a href="#top" className="flex items-center gap-2 font-bold text-lg tracking-tight">
+            <span className="w-7 h-7 rounded-lg gradient-sky sky-glow flex items-center justify-center">
+              <span className="w-2 h-2 rounded-sm bg-background" />
+            </span>
             <span>TheHeroes<span className="text-primary">.</span>Agency</span>
           </a>
           <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
@@ -28,7 +31,7 @@ const Index = () => {
             <a href="#offer" className="hover:text-foreground transition">Free Audit</a>
             <a href="#faq" className="hover:text-foreground transition">FAQ</a>
           </nav>
-          <Button asChild size="sm" className="gradient-sky text-primary-foreground">
+          <Button asChild size="sm" className="gradient-sky text-primary-foreground sky-glow rounded-full px-5">
             <a href="#offer">Get Free Audit</a>
           </Button>
         </div>
@@ -36,41 +39,48 @@ const Index = () => {
 
       <main id="top">
         {/* HERO */}
-        <section className="relative pt-32 pb-24 md:pt-44 md:pb-32 overflow-hidden">
+        <section className="relative pt-32 pb-24 md:pt-48 md:pb-40 overflow-hidden">
           <img
             src={heroBg}
             alt=""
             aria-hidden
-            className="absolute inset-0 w-full h-full object-cover opacity-40"
+            className="absolute inset-0 w-full h-full object-cover opacity-30"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/80 to-background" />
-          <div className="absolute inset-0 grid-bg opacity-40" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/85 to-background" />
+          <div className="absolute inset-0 grid-bg opacity-60" />
+          {/* Ambient orbs */}
+          <div className="pointer-events-none absolute -top-20 -left-20 w-[480px] h-[480px] bg-orb animate-float-slow" />
+          <div className="pointer-events-none absolute top-40 -right-32 w-[520px] h-[520px] bg-orb animate-float-slow" style={{ animationDelay: "-6s" }} />
+          <div className="absolute inset-0 noise" />
 
           <div className="container relative">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium mb-8">
-                <Sparkles className="w-3.5 h-3.5" />
-                Shopify Experts since 2016 · 120+ stores
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-foreground/90 text-xs font-medium mb-8 ring-gradient">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-60"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                </span>
+                Shopify Experts since 2016 · 120+ stores shipped
               </div>
 
-              <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold leading-[1.05] tracking-tight mb-6">
+              <h1 className="text-5xl sm:text-6xl md:text-[5.5rem] font-bold leading-[1.02] tracking-tight mb-7">
                 We turn underperforming Shopify stores into{" "}
-                <span className="text-gradient">revenue machines</span>
+                <span className="font-serif-display text-gradient">revenue machines</span>
               </h1>
 
-              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
+              <p className="text-lg md:text-xl text-muted-foreground/90 max-w-2xl mx-auto mb-10 leading-relaxed">
                 Most stores lose 70% of buyers at the homepage. We redesign your store
                 to convert — typically lifting revenue <span className="text-foreground font-semibold">2–4×</span> within 7 days.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Button asChild size="lg" className="gradient-sky text-primary-foreground sky-glow text-base h-14 px-8">
+                <Button asChild size="lg" className="gradient-sky text-primary-foreground sky-glow text-base h-14 px-8 rounded-full font-semibold">
                   <a href="#offer">
                     Get My Free Store Audit
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </a>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="text-base h-14 px-8 border-border hover:bg-secondary">
+                <Button asChild size="lg" variant="outline" className="text-base h-14 px-8 rounded-full border-white/15 bg-white/[0.02] hover:bg-white/[0.06] backdrop-blur-md">
                   <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="mr-2 w-5 h-5" />
                     Chat on WhatsApp
@@ -78,7 +88,7 @@ const Index = () => {
                 </Button>
               </div>
 
-              <div className="mt-10 flex items-center justify-center gap-6 text-sm text-muted-foreground">
+              <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
                 <div className="flex items-center gap-1.5">
                   <CheckCircle2 className="w-4 h-4 text-primary" />
                   No credit card
@@ -87,7 +97,7 @@ const Index = () => {
                   <CheckCircle2 className="w-4 h-4 text-primary" />
                   Reply in 12h
                 </div>
-                <div className="hidden sm:flex items-center gap-1.5">
+                <div className="flex items-center gap-1.5">
                   <CheckCircle2 className="w-4 h-4 text-primary" />
                   100% free
                 </div>
@@ -95,29 +105,51 @@ const Index = () => {
             </div>
 
             {/* Result strip */}
-            <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-px bg-border rounded-2xl overflow-hidden border border-border max-w-4xl mx-auto">
+            <div className="mt-24 relative max-w-5xl mx-auto">
+              <div className="absolute -inset-px rounded-3xl gradient-sky opacity-30 blur-xl" />
+              <div className="relative grid grid-cols-2 md:grid-cols-4 gap-px bg-white/5 rounded-3xl overflow-hidden ring-gradient premium-shadow">
               {[
                 { v: "+312%", l: "Avg. revenue lift" },
                 { v: "2.4×", l: "Conversion rate" },
                 { v: "7d", l: "Time to results" },
                 { v: "50+", l: "Stores rebuilt" },
               ].map((s) => (
-                <div key={s.l} className="bg-card p-6 text-center">
-                  <div className="text-2xl md:text-3xl font-bold text-gradient">{s.v}</div>
-                  <div className="text-xs md:text-sm text-muted-foreground mt-1">{s.l}</div>
+                <div key={s.l} className="bg-card/80 backdrop-blur-md p-7 text-center">
+                  <div className="text-3xl md:text-4xl font-bold text-gradient tracking-tight">{s.v}</div>
+                  <div className="text-xs md:text-sm text-muted-foreground mt-1.5 uppercase tracking-wider">{s.l}</div>
                 </div>
               ))}
+              </div>
+            </div>
+
+            {/* Trusted by strip */}
+            <div className="mt-20 text-center">
+              <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground/70 mb-6">
+                Trusted by founders building on
+              </p>
+              <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 text-muted-foreground/60 text-sm font-semibold">
+                <span className="hover:text-foreground transition">Shopify Plus</span>
+                <span className="opacity-30">·</span>
+                <span className="hover:text-foreground transition">Recharge</span>
+                <span className="opacity-30">·</span>
+                <span className="hover:text-foreground transition">Klaviyo</span>
+                <span className="opacity-30">·</span>
+                <span className="hover:text-foreground transition">Shop Pay</span>
+                <span className="opacity-30">·</span>
+                <span className="hover:text-foreground transition">Judge.me</span>
+              </div>
             </div>
           </div>
         </section>
 
         {/* PROOF */}
-        <section id="proof" className="py-24 md:py-32">
+        <section id="proof" className="py-24 md:py-32 relative">
+          <div className="pointer-events-none absolute top-1/2 -left-40 w-[500px] h-[500px] bg-orb opacity-60" />
           <div className="container">
             <div className="max-w-2xl mx-auto text-center mb-16">
-              <p className="text-primary text-sm font-semibold tracking-widest uppercase mb-3">Proof · Case Studies</p>
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-                Real stores. Real numbers.
+              <p className="text-primary text-xs font-semibold tracking-[0.25em] uppercase mb-4">— Proof · Case Studies</p>
+              <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-5">
+                Real stores. <span className="font-serif-display text-gradient">Real numbers.</span>
               </h2>
               <p className="text-muted-foreground text-lg">
                 Drag the slider to see the before/after transformation on live Shopify stores.
@@ -127,20 +159,23 @@ const Index = () => {
             <div className="space-y-24">
               {/* Case 1 — Take Let Loose */}
               <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-                <div>
+                <div className="relative">
+                  <div className="absolute -inset-4 gradient-sky opacity-20 blur-3xl rounded-3xl" />
+                  <div className="relative">
                   <BeforeAfter
                     before={auditBefore1}
                     after={auditAfter1}
                     beforeAlt="Take Let Loose homepage before audit — generic theme, weak positioning"
                     afterAlt="Take Let Loose Shopify homepage after redesign — bold subscription-first DTC"
                   />
+                  </div>
                 </div>
                 <div>
-                  <p className="text-primary text-xs font-semibold tracking-widest uppercase mb-3">
-                    Audit Case Study 01 — Take Let Loose · Gut-Health DTC
+                  <p className="text-primary text-xs font-semibold tracking-[0.25em] uppercase mb-4">
+                    01 — Take Let Loose · Gut-Health DTC
                   </p>
-                  <h3 className="text-3xl md:text-4xl font-bold mb-5">
-                    From flat launch to <span className="text-gradient">subscription-first growth</span>
+                  <h3 className="text-3xl md:text-5xl font-bold mb-5 tracking-tight">
+                    From flat launch to <span className="font-serif-display text-gradient">subscription-first growth</span>
                   </h3>
                   <p className="text-muted-foreground text-lg mb-6">
                     Our free audit flagged a weak hero, no subscription anchor, and friction at PDP.
@@ -153,9 +188,9 @@ const Index = () => {
                       { v: "2.8×", l: "Conversion rate" },
                       { v: "62%", l: "Subscription rate" },
                     ].map((s) => (
-                      <div key={s.l} className="glass rounded-lg p-4 text-center">
-                        <div className="text-xl font-bold text-foreground">{s.v}</div>
-                        <div className="text-xs text-muted-foreground mt-1">{s.l}</div>
+                      <div key={s.l} className="glass rounded-xl p-4 text-center ring-gradient">
+                        <div className="text-2xl font-bold text-gradient">{s.v}</div>
+                        <div className="text-xs text-muted-foreground mt-1 uppercase tracking-wider">{s.l}</div>
                       </div>
                     ))}
                   </div>
@@ -184,20 +219,23 @@ const Index = () => {
 
               {/* Case 2 — Valeva */}
               <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-                <div className="lg:order-2">
+                <div className="lg:order-2 relative">
+                  <div className="absolute -inset-4 gradient-sky opacity-20 blur-3xl rounded-3xl" />
+                  <div className="relative">
                   <BeforeAfter
                     before={auditBefore2}
                     after={auditAfter2}
                     beforeAlt="Valeva homepage before audit — dated layout, low trust"
                     afterAlt="Valeva Shopify homepage after redesign — cinematic founder-led haircare flagship"
                   />
+                  </div>
                 </div>
                 <div className="lg:order-1">
-                  <p className="text-primary text-xs font-semibold tracking-widest uppercase mb-3">
-                    Audit Case Study 02 — Valeva · Hair & Scalp Wellness
+                  <p className="text-primary text-xs font-semibold tracking-[0.25em] uppercase mb-4">
+                    02 — Valeva · Hair & Scalp Wellness
                   </p>
-                  <h3 className="text-3xl md:text-4xl font-bold mb-5">
-                    Cinematic rebuild → <span className="text-gradient">2.4× AOV</span>
+                  <h3 className="text-3xl md:text-5xl font-bold mb-5 tracking-tight">
+                    Cinematic rebuild → <span className="font-serif-display text-gradient">2.4× AOV</span>
                   </h3>
                   <p className="text-muted-foreground text-lg mb-6">
                     The audit identified low founder trust and a missing review system as the
@@ -210,9 +248,9 @@ const Index = () => {
                       { v: "+318%", l: "Add-to-cart" },
                       { v: "−47%", l: "Bounce rate" },
                     ].map((s) => (
-                      <div key={s.l} className="glass rounded-lg p-4 text-center">
-                        <div className="text-xl font-bold text-foreground">{s.v}</div>
-                        <div className="text-xs text-muted-foreground mt-1">{s.l}</div>
+                      <div key={s.l} className="glass rounded-xl p-4 text-center ring-gradient">
+                        <div className="text-2xl font-bold text-gradient">{s.v}</div>
+                        <div className="text-xs text-muted-foreground mt-1 uppercase tracking-wider">{s.l}</div>
                       </div>
                     ))}
                   </div>
