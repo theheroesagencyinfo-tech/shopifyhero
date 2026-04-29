@@ -299,6 +299,71 @@ const Index = () => {
           </div>
         </section>
 
+        {/* TESTIMONIALS / TRUST */}
+        <section className="py-20 md:py-28 border-y border-white/[0.06] bg-card/20 relative">
+          <div className="container">
+            <div className="max-w-2xl mx-auto text-center mb-12">
+              <p className="text-primary text-xs font-semibold tracking-[0.25em] uppercase mb-4">— Founders we've helped</p>
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
+                What our clients <span className="font-serif-display text-gradient">actually say</span>
+              </h2>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              {[
+                {
+                  q: "They rebuilt our PDP and we 2.6×'d our conversion rate in the first month. Best money we never spent — the audit alone was worth thousands.",
+                  n: "Marcus T.",
+                  r: "Founder, DTC Wellness Brand",
+                },
+                {
+                  q: "Honest, fast, and zero pushy upsell. They flagged 11 issues on our store, fixed 8 in a week, and our Shopify revenue jumped from $42k to $118k/mo.",
+                  n: "Aïsha L.",
+                  r: "CEO, Haircare Brand (8-figure)",
+                },
+                {
+                  q: "We'd worked with 3 'Shopify experts' before TheHeroes. They're the only ones who actually understood Liquid, Recharge, and Klaviyo as one system.",
+                  n: "Daniel R.",
+                  r: "COO, Subscription Coffee",
+                },
+              ].map((t) => (
+                <div key={t.n} className="glass rounded-2xl p-7 ring-gradient flex flex-col">
+                  <Quote className="w-7 h-7 text-primary/70 mb-4" />
+                  <p className="text-foreground/90 leading-relaxed mb-6 text-[15px]">"{t.q}"</p>
+                  <div className="mt-auto pt-4 border-t border-white/[0.06]">
+                    <div className="flex items-center gap-1 text-[hsl(var(--gold))] mb-2">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-3.5 h-3.5 fill-current" />
+                      ))}
+                    </div>
+                    <div className="font-semibold text-sm">{t.n}</div>
+                    <div className="text-xs text-muted-foreground">{t.r}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Trust bar */}
+            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
+              {[
+                { i: Award, t: "Shopify Experts", d: "Since 2016" },
+                { i: ShieldCheck, t: "NDA on request", d: "Your data stays private" },
+                { i: Lock, t: "Secure & GDPR", d: "Encrypted handoff" },
+                { i: Clock, t: "12h response", d: "Real humans, real fast" },
+              ].map(({ i: Icon, t, d }) => (
+                <div key={t} className="glass rounded-xl p-4 flex items-center gap-3 ring-gradient">
+                  <div className="w-10 h-10 rounded-lg gradient-sky text-primary-foreground flex items-center justify-center shrink-0">
+                    <Icon className="w-5 h-5" />
+                  </div>
+                  <div className="min-w-0">
+                    <div className="text-sm font-semibold truncate">{t}</div>
+                    <div className="text-xs text-muted-foreground truncate">{d}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* PROBLEM */}
         <section id="problem" className="py-24 md:py-32 border-y border-white/[0.06] bg-card/20 relative overflow-hidden">
           <div className="pointer-events-none absolute inset-0 grid-bg opacity-30" />
