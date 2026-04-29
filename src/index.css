@@ -6,38 +6,39 @@
 
 @layer base {
   :root {
-    --background: 222 47% 5%;
+    --background: 224 51% 4%;
     --foreground: 210 40% 98%;
 
-    --card: 222 47% 7%;
+    --card: 223 47% 7%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222 47% 7%;
+    --popover: 223 47% 7%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 199 89% 55%;
-    --primary-foreground: 222 47% 5%;
+    --primary: 199 95% 58%;
+    --primary-foreground: 224 51% 4%;
 
-    --secondary: 222 30% 12%;
+    --secondary: 223 30% 12%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 222 25% 14%;
+    --muted: 223 25% 13%;
     --muted-foreground: 215 20% 70%;
 
-    --accent: 198 93% 60%;
-    --accent-foreground: 222 47% 5%;
+    --accent: 198 93% 62%;
+    --accent-foreground: 224 51% 4%;
 
     --destructive: 0 62% 40%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 222 30% 16%;
-    --input: 222 30% 16%;
-    --ring: 199 89% 55%;
-    --radius: 0.75rem;
+    --border: 223 30% 14%;
+    --input: 223 30% 14%;
+    --ring: 199 95% 58%;
+    --radius: 1rem;
 
-    --sky: 199 89% 55%;
+    --sky: 199 95% 58%;
     --sky-deep: 201 96% 38%;
-    --sky-glow: 198 93% 65%;
+    --sky-glow: 196 100% 70%;
+    --gold: 41 95% 62%;
 
     --whatsapp: 142 70% 45%;
 
@@ -59,40 +60,105 @@
   html { scroll-behavior: smooth; }
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.011em;
+  }
+  h1, h2, h3 { letter-spacing: -0.025em; }
+  .font-serif-display {
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-weight: 600;
+    letter-spacing: -0.03em;
   }
 }
 
 @layer utilities {
   .text-gradient {
-    background: linear-gradient(to right, hsl(var(--sky-deep)), hsl(var(--sky)), hsl(var(--sky-glow)));
+    background: linear-gradient(110deg, hsl(var(--sky-deep)) 0%, hsl(var(--sky)) 45%, hsl(var(--sky-glow)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gradient-gold {
+    background: linear-gradient(110deg, hsl(var(--gold)) 0%, #fff7d6 60%, hsl(var(--gold)) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
   .gradient-sky {
-    background: linear-gradient(to right, hsl(var(--sky-deep)), hsl(var(--sky)), hsl(var(--sky-glow)));
+    background: linear-gradient(110deg, hsl(var(--sky-deep)), hsl(var(--sky)) 55%, hsl(var(--sky-glow)));
   }
   .sky-glow {
-    box-shadow: 0 0 40px hsl(var(--sky) / 0.25), 0 0 80px hsl(var(--sky) / 0.12);
+    box-shadow: 0 0 30px hsl(var(--sky) / 0.35), 0 0 80px hsl(var(--sky) / 0.18), inset 0 1px 0 hsl(0 0% 100% / 0.08);
+  }
+  .premium-shadow {
+    box-shadow: 0 1px 0 hsl(0 0% 100% / 0.06) inset, 0 30px 60px -30px hsl(var(--sky) / 0.35), 0 18px 40px -20px hsl(0 0% 0% / 0.5);
   }
   .bg-glow-radial {
-    background: radial-gradient(ellipse at top, hsl(var(--sky) / 0.18) 0%, transparent 60%);
+    background: radial-gradient(ellipse at top, hsl(var(--sky) / 0.22) 0%, transparent 60%);
+  }
+  .bg-orb {
+    background: radial-gradient(circle at center, hsl(var(--sky) / 0.45) 0%, hsl(var(--sky) / 0.05) 40%, transparent 70%);
+    filter: blur(60px);
   }
   .glass {
-    @apply bg-card/40 backdrop-blur-xl border border-white/10;
+    @apply bg-card/50 backdrop-blur-xl border border-white/[0.08];
+    background-image: linear-gradient(180deg, hsl(0 0% 100% / 0.04), hsl(0 0% 100% / 0));
+  }
+  .glass-strong {
+    @apply bg-card/70 backdrop-blur-2xl border border-white/[0.1];
+    background-image: linear-gradient(180deg, hsl(0 0% 100% / 0.06), hsl(0 0% 100% / 0));
+  }
+  .ring-gradient {
+    position: relative;
+  }
+  .ring-gradient::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, hsl(var(--sky) / 0.6), hsl(var(--sky-glow) / 0.1) 40%, transparent 70%);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    pointer-events: none;
   }
   .hover-lift {
     transition: transform .4s cubic-bezier(.22,1,.36,1), box-shadow .4s cubic-bezier(.22,1,.36,1);
   }
   .hover-lift:hover {
     transform: translateY(-6px);
-    box-shadow: 0 20px 40px -20px hsl(var(--sky) / 0.35);
+    box-shadow: 0 24px 48px -22px hsl(var(--sky) / 0.45);
   }
   .grid-bg {
     background-image:
-      linear-gradient(hsl(var(--sky) / 0.06) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(var(--sky) / 0.06) 1px, transparent 1px);
-    background-size: 48px 48px;
+      linear-gradient(hsl(var(--sky) / 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--sky) / 0.05) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+  }
+  .noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.4 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.035;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+  }
+  @keyframes float-slow {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(20px, -30px); }
+  }
+  .animate-float-slow { animation: float-slow 14s ease-in-out infinite; }
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  .shimmer {
+    background: linear-gradient(90deg, transparent, hsl(0 0% 100% / 0.08), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 3s linear infinite;
   }
 }
