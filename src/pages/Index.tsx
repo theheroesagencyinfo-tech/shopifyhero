@@ -426,6 +426,38 @@ const Index = () => {
           </div>
         </section>
 
+        {/* WHO THIS IS FOR */}
+        <section className="py-20 md:py-28 relative overflow-hidden">
+          <div className="pointer-events-none absolute -top-20 left-1/3 w-[420px] h-[420px] bg-orb opacity-40" />
+          <div className="container relative">
+            <div className="max-w-2xl mx-auto text-center mb-12">
+              <p className="text-primary text-xs font-semibold tracking-[0.25em] uppercase mb-4">— Who it's for</p>
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+                This Is For You <span className="font-serif-display text-gradient">If…</span>
+              </h2>
+              <p className="text-muted-foreground text-lg">If any of these sound familiar, the audit will pay for itself the moment you read it.</p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              {[
+                { i: TrendingDown, t: "You're getting traffic but no sales", d: "Your ads are spending, sessions are climbing — and the cart stays empty." },
+                { i: HelpCircle, t: "Your store looks good but doesn't convert", d: "It's pretty. It's modern. It still doesn't turn visitors into buyers." },
+                { i: Search, t: "You're unsure what's actually wrong", d: "You've tweaked headlines, swapped images, lowered prices — nothing moves the needle." },
+              ].map(({ i: Icon, t, d }) => (
+                <div key={t} className="glass rounded-2xl p-7 hover-lift ring-gradient">
+                  <div className="w-11 h-11 rounded-xl gradient-sky text-primary-foreground flex items-center justify-center mb-5 sky-glow">
+                    <Icon className="w-5 h-5" />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2 tracking-tight">{t}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{d}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-center text-muted-foreground mt-10 text-sm uppercase tracking-[0.2em]">
+              <span className="text-foreground/90 font-semibold">Built to convert.</span> &nbsp;·&nbsp; Turn visitors into buyers.
+            </p>
+          </div>
+        </section>
+
         {/* OFFER / CTA */}
         <section id="offer" className="py-24 md:py-32 relative overflow-hidden">
           <div className="absolute inset-0 bg-glow-radial" />
