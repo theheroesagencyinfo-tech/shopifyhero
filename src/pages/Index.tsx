@@ -1,4 +1,4 @@
-import { ArrowRight, Calendar, CheckCircle2, MessageCircle, TrendingUp, Zap, ShieldCheck, Clock, Star, ExternalLink, AlertTriangle, XCircle, Target, Layers, Rocket, Quote, Lock, Award, Send, Search, FileCheck, Flame, Smartphone } from "lucide-react";
+import { ArrowRight, CheckCircle2, MessageCircle, ShieldCheck, Clock, Star, ExternalLink, AlertTriangle, XCircle, Target, Layers, Rocket, Quote, Lock, Award, Send, Search, FileCheck, Flame, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BeforeAfter } from "@/components/BeforeAfter";
 import heroBg from "@/assets/landing-hero.jpg";
