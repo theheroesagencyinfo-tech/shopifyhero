@@ -281,12 +281,13 @@ const Index = () => {
         </section>
 
         {/* PROBLEM */}
-        <section id="problem" className="py-24 md:py-28 border-y border-border bg-card/30">
-          <div className="container">
+        <section id="problem" className="py-24 md:py-32 border-y border-white/[0.06] bg-card/20 relative overflow-hidden">
+          <div className="pointer-events-none absolute inset-0 grid-bg opacity-30" />
+          <div className="container relative">
             <div className="max-w-2xl mx-auto text-center mb-14">
-              <p className="text-primary text-sm font-semibold tracking-widest uppercase mb-3">The Problem</p>
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-                Why most Shopify stores fail
+              <p className="text-primary text-xs font-semibold tracking-[0.25em] uppercase mb-4">— The Problem</p>
+              <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-5">
+                Why most Shopify stores <span className="font-serif-display text-gradient">quietly fail</span>
               </h2>
               <p className="text-muted-foreground text-lg">
                 You're driving traffic. You're spending on ads. But the sales just aren't landing.
@@ -302,11 +303,11 @@ const Index = () => {
                 { i: ShieldCheck, t: "PDPs that leak buyers", d: "Walls of text, no benefit grid, no FAQ, no urgency. Add-to-cart rates stay below 3%." },
                 { i: Zap, t: "Checkout friction", d: "Forced account creation, no Shop Pay, surprise shipping costs — 68% of carts get abandoned." },
               ].map(({ i: Icon, t, d }) => (
-                <div key={t} className="rounded-2xl p-6 border border-border bg-card/60 hover-lift">
-                  <div className="w-10 h-10 rounded-lg bg-destructive/10 text-destructive flex items-center justify-center mb-4">
+                <div key={t} className="relative rounded-2xl p-7 glass hover-lift ring-gradient">
+                  <div className="w-11 h-11 rounded-xl bg-destructive/15 text-destructive flex items-center justify-center mb-5">
                     <Icon className="w-5 h-5" />
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">{t}</h3>
+                  <h3 className="text-lg font-semibold mb-2 tracking-tight">{t}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">{d}</p>
                 </div>
               ))}
@@ -318,12 +319,13 @@ const Index = () => {
         </section>
 
         {/* SOLUTION */}
-        <section id="solution" className="py-24 md:py-32">
-          <div className="container">
+        <section id="solution" className="py-24 md:py-32 relative overflow-hidden">
+          <div className="pointer-events-none absolute -top-20 right-0 w-[500px] h-[500px] bg-orb opacity-50" />
+          <div className="container relative">
             <div className="max-w-2xl mx-auto text-center mb-14">
-              <p className="text-primary text-sm font-semibold tracking-widest uppercase mb-3">Our Solution</p>
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-                What we do <span className="text-gradient">differently</span>
+              <p className="text-primary text-xs font-semibold tracking-[0.25em] uppercase mb-4">— Our Solution</p>
+              <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-5">
+                What we do <span className="font-serif-display text-gradient">differently</span>
               </h2>
               <p className="text-muted-foreground text-lg">
                 We don't just "make it pretty." We rebuild your store around one goal: revenue per visitor.
@@ -336,12 +338,12 @@ const Index = () => {
                 { i: Rocket, t: "Speed-obsessed engineering", d: "Sub-2-second mobile load. Lazy images, optimized Liquid, zero bloat apps. Core Web Vitals: green." },
                 { i: ShieldCheck, t: "Data-driven, not opinion-driven", d: "We A/B test hero, PDP, and checkout. Decisions come from your data — not from our taste." },
               ].map(({ i: Icon, t, d }) => (
-                <div key={t} className="glass rounded-2xl p-7 hover-lift">
-                  <div className="w-12 h-12 rounded-lg gradient-sky text-primary-foreground flex items-center justify-center mb-5">
+                <div key={t} className="glass rounded-2xl p-8 hover-lift ring-gradient">
+                  <div className="w-12 h-12 rounded-xl gradient-sky text-primary-foreground flex items-center justify-center mb-6 sky-glow">
                     <Icon className="w-6 h-6" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">{t}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{d}</p>
+                  <h3 className="text-xl font-semibold mb-2 tracking-tight">{t}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{d}</p>
                 </div>
               ))}
             </div>
@@ -349,11 +351,12 @@ const Index = () => {
         </section>
 
         {/* WHAT YOU GET */}
-        <section className="py-24 border-y border-border bg-card/30">
+        <section className="py-24 md:py-28 border-y border-white/[0.06] bg-card/20">
           <div className="container">
             <div className="max-w-2xl mx-auto text-center mb-14">
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-                What you actually get
+              <p className="text-primary text-xs font-semibold tracking-[0.25em] uppercase mb-4">— Deliverables</p>
+              <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-5">
+                What you <span className="font-serif-display text-gradient">actually get</span>
               </h2>
               <p className="text-muted-foreground text-lg">
                 A 15-page audit + a free 1:1 strategy call. No fluff, no obligation.
@@ -365,12 +368,12 @@ const Index = () => {
                 { i: Zap, t: "Speed & UX report", d: "Mobile speed score, Core Web Vitals, and the top 5 UX leaks costing you sales." },
                 { i: ShieldCheck, t: "Personalized roadmap", d: "A prioritized 90-day action plan you can implement yourself or hand to your team." },
               ].map(({ i: Icon, t, d }) => (
-                <div key={t} className="glass rounded-2xl p-7 hover-lift">
-                  <div className="w-12 h-12 rounded-lg gradient-sky text-primary-foreground flex items-center justify-center mb-5">
+                <div key={t} className="glass rounded-2xl p-8 hover-lift ring-gradient">
+                  <div className="w-12 h-12 rounded-xl gradient-sky text-primary-foreground flex items-center justify-center mb-6 sky-glow">
                     <Icon className="w-6 h-6" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">{t}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{d}</p>
+                  <h3 className="text-xl font-semibold mb-2 tracking-tight">{t}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{d}</p>
                 </div>
               ))}
             </div>
@@ -380,22 +383,26 @@ const Index = () => {
         {/* OFFER / CTA */}
         <section id="offer" className="py-24 md:py-32 relative overflow-hidden">
           <div className="absolute inset-0 bg-glow-radial" />
+          <div className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 h-[600px] bg-orb opacity-70" />
           <div className="container relative">
-            <div className="max-w-3xl mx-auto glass rounded-3xl p-10 md:p-16 text-center sky-glow">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/15 text-primary text-sm font-semibold mb-6">
-                <Star className="w-3.5 h-3.5 fill-current" />
-                Limited — 5 audits per month
-              </div>
-              <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-5">
-                Free Shopify Store Audit
-              </h2>
-              <p className="text-muted-foreground text-lg md:text-xl mb-8 max-w-xl mx-auto">
-                Get a full conversion teardown + a free homepage redesign preview.
-                Worth $750 — yours free.
-              </p>
+            <div className="relative max-w-3xl mx-auto">
+              <div className="absolute -inset-2 rounded-[2rem] gradient-sky opacity-30 blur-2xl" />
+              <div className="relative glass-strong rounded-[2rem] p-10 md:p-16 text-center premium-shadow ring-gradient overflow-hidden">
+                <div className="absolute inset-x-0 top-0 h-px shimmer" />
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[hsl(var(--gold))]/10 border border-[hsl(var(--gold))]/30 text-sm font-semibold mb-6">
+                  <Star className="w-3.5 h-3.5 fill-[hsl(var(--gold))] text-[hsl(var(--gold))]" />
+                  <span className="text-gradient-gold">Limited — 5 audits per month</span>
+                </div>
+                <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-5 leading-[1.05]">
+                  Free Shopify <span className="font-serif-display text-gradient">Store Audit</span>
+                </h2>
+                <p className="text-muted-foreground text-lg md:text-xl mb-8 max-w-xl mx-auto leading-relaxed">
+                  Get a full conversion teardown + a free homepage redesign preview.
+                  <span className="text-foreground font-medium"> Worth $750</span> — yours free.
+                </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                <Button asChild size="lg" className="gradient-sky text-primary-foreground sky-glow text-base h-14 px-8">
+                <Button asChild size="lg" className="gradient-sky text-primary-foreground sky-glow text-base h-14 px-8 rounded-full font-semibold">
                   <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
                     <Calendar className="mr-2 w-5 h-5" />
                     Book a Call
@@ -404,7 +411,7 @@ const Index = () => {
                 <Button
                   asChild
                   size="lg"
-                  className="text-base h-14 px-8 bg-[hsl(var(--whatsapp))] hover:bg-[hsl(var(--whatsapp))]/90 text-white"
+                  className="text-base h-14 px-8 rounded-full bg-[hsl(var(--whatsapp))] hover:bg-[hsl(var(--whatsapp))]/90 text-white font-semibold"
                 >
                   <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="mr-2 w-5 h-5" />
@@ -418,14 +425,20 @@ const Index = () => {
                 <div className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-primary" /> No obligations</div>
                 <div className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-primary" /> 100% free</div>
               </div>
+              </div>
             </div>
           </div>
         </section>
 
         {/* FAQ */}
-        <section id="faq" className="py-24 border-t border-border">
+        <section id="faq" className="py-24 md:py-28 border-t border-white/[0.06]">
           <div className="container max-w-3xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Common questions</h2>
+            <div className="text-center mb-14">
+              <p className="text-primary text-xs font-semibold tracking-[0.25em] uppercase mb-4">— FAQ</p>
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+                Common <span className="font-serif-display text-gradient">questions</span>
+              </h2>
+            </div>
             <div className="space-y-4">
               {[
                 { q: "Is the audit really free?", a: "Yes — 100% free, no credit card. We do 5 per month because each one takes 4–6 hours of real work." },
@@ -433,10 +446,10 @@ const Index = () => {
                 { q: "Will you try to upsell me?", a: "We'll show you exactly what's broken. If you want help fixing it, we'll quote you. If not, you keep the audit. No pressure." },
                 { q: "How fast do I get it?", a: "Within 12 hours of booking, including a recorded video walkthrough." },
               ].map((f) => (
-                <details key={f.q} className="glass rounded-xl p-5 group">
-                  <summary className="cursor-pointer font-semibold flex items-center justify-between list-none">
+                <details key={f.q} className="glass rounded-2xl p-6 group ring-gradient">
+                  <summary className="cursor-pointer font-semibold flex items-center justify-between list-none text-base">
                     {f.q}
-                    <span className="text-primary group-open:rotate-45 transition-transform">+</span>
+                    <span className="text-primary group-open:rotate-45 transition-transform text-xl leading-none">+</span>
                   </summary>
                   <p className="text-muted-foreground mt-3 text-sm leading-relaxed">{f.a}</p>
                 </details>
@@ -444,15 +457,15 @@ const Index = () => {
             </div>
 
             {/* FINAL CTA */}
-            <div className="mt-20 text-center">
-              <h3 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-                Ready to see what your store could do?
+            <div className="mt-24 text-center">
+              <h3 className="text-3xl md:text-5xl font-bold tracking-tight mb-5">
+                Ready to see what your store <span className="font-serif-display text-gradient">could do?</span>
               </h3>
               <p className="text-muted-foreground text-lg mb-8 max-w-xl mx-auto">
                 Claim your free Shopify audit today. 12-hour delivery. Zero obligation.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild size="lg" className="gradient-sky text-primary-foreground sky-glow text-base h-14 px-8">
+                <Button asChild size="lg" className="gradient-sky text-primary-foreground sky-glow text-base h-14 px-8 rounded-full font-semibold">
                   <a href="#offer">
                     Get My Free Audit
                     <ArrowRight className="ml-2 w-5 h-5" />
@@ -461,7 +474,7 @@ const Index = () => {
                 <Button
                   asChild
                   size="lg"
-                  className="text-base h-14 px-8 bg-[hsl(var(--whatsapp))] hover:bg-[hsl(var(--whatsapp))]/90 text-white"
+                  className="text-base h-14 px-8 rounded-full bg-[hsl(var(--whatsapp))] hover:bg-[hsl(var(--whatsapp))]/90 text-white font-semibold"
                 >
                   <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="mr-2 w-5 h-5" />
@@ -475,9 +488,12 @@ const Index = () => {
       </main>
 
       {/* FOOTER */}
-      <footer className="border-t border-border py-10">
+      <footer className="border-t border-white/[0.06] py-10">
           <div className="container flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3">
+              <span className="w-6 h-6 rounded-md gradient-sky flex items-center justify-center">
+                <span className="w-1.5 h-1.5 rounded-sm bg-background" />
+              </span>
               <span>© {new Date().getFullYear()} TheHeroes Agency · theheroesagency.org</span>
             </div>
             <div className="flex items-center gap-6">
@@ -494,7 +510,7 @@ const Index = () => {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[hsl(var(--whatsapp))] text-white flex items-center justify-center shadow-lg hover:scale-110 transition"
+        className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[hsl(var(--whatsapp))] text-white flex items-center justify-center shadow-2xl shadow-[hsl(var(--whatsapp))]/40 hover:scale-110 transition ring-4 ring-[hsl(var(--whatsapp))]/20"
       >
         <MessageCircle className="w-6 h-6" />
       </a>
