@@ -64,24 +64,24 @@ const Index = () => {
                 Shopify Experts since 2016 · 120+ stores shipped
               </div>
 
-              <h1 className="text-5xl sm:text-6xl md:text-[5.5rem] font-bold leading-[1.02] tracking-tight mb-7">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] font-bold leading-[1.05] md:leading-[1.02] tracking-tight mb-7">
                 We turn underperforming Shopify stores into{" "}
                 <span className="font-serif-display text-gradient">revenue machines</span>
               </h1>
 
-              <p className="text-lg md:text-xl text-muted-foreground/90 max-w-2xl mx-auto mb-10 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground/90 max-w-2xl mx-auto mb-10 leading-relaxed">
                 Most stores lose 70% of buyers at the homepage. We redesign your store
                 to convert — typically lifting revenue <span className="text-foreground font-semibold">2–4×</span> within 7 days.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Button asChild size="lg" className="gradient-sky text-primary-foreground sky-glow text-base h-14 px-8 rounded-full font-semibold">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center w-full sm:w-auto">
+                <Button asChild size="lg" className="gradient-sky text-primary-foreground sky-glow text-base h-14 px-6 sm:px-8 rounded-full font-semibold w-full sm:w-auto">
                   <a href="#offer">
                     Get My Free Store Audit
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </a>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="text-base h-14 px-8 rounded-full border-white/15 bg-white/[0.02] hover:bg-white/[0.06] backdrop-blur-md">
+                <Button asChild size="lg" variant="outline" className="text-base h-14 px-6 sm:px-8 rounded-full border-white/15 bg-white/[0.02] hover:bg-white/[0.06] backdrop-blur-md w-full sm:w-auto">
                   <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="mr-2 w-5 h-5" />
                     Chat on WhatsApp
@@ -106,7 +106,7 @@ const Index = () => {
             </div>
 
             {/* Result strip */}
-            <div className="mt-24 relative max-w-5xl mx-auto">
+            <div className="mt-16 md:mt-24 relative max-w-5xl mx-auto">
               <div className="absolute -inset-px rounded-3xl gradient-sky opacity-30 blur-xl" />
               <div className="relative grid grid-cols-2 md:grid-cols-4 gap-px bg-white/5 rounded-3xl overflow-hidden ring-gradient premium-shadow">
               {[
@@ -115,9 +115,9 @@ const Index = () => {
                 { v: "7d", l: "Time to results" },
                 { v: "50+", l: "Stores rebuilt" },
               ].map((s) => (
-                <div key={s.l} className="bg-card/80 backdrop-blur-md p-7 text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-gradient tracking-tight">{s.v}</div>
-                  <div className="text-xs md:text-sm text-muted-foreground mt-1.5 uppercase tracking-wider">{s.l}</div>
+                <div key={s.l} className="bg-card/80 backdrop-blur-md p-5 sm:p-7 text-center">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient tracking-tight">{s.v}</div>
+                  <div className="text-[10px] sm:text-xs md:text-sm text-muted-foreground mt-1.5 uppercase tracking-wider">{s.l}</div>
                 </div>
               ))}
               </div>
