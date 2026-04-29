@@ -1,4 +1,4 @@
-import { ArrowRight, Calendar, CheckCircle2, MessageCircle, TrendingUp, Zap, ShieldCheck, Clock, Star, ExternalLink, AlertTriangle, XCircle, Target, Layers, Rocket } from "lucide-react";
+import { ArrowRight, Calendar, CheckCircle2, MessageCircle, TrendingUp, Zap, ShieldCheck, Clock, Star, ExternalLink, AlertTriangle, XCircle, Target, Layers, Rocket, Quote, Lock, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BeforeAfter } from "@/components/BeforeAfter";
 import heroBg from "@/assets/landing-hero.jpg";
@@ -8,9 +8,10 @@ import auditBefore2 from "@/assets/audit-before-2.jpg";
 import auditAfter2 from "@/assets/audit-after-2.png";
 
 const WHATSAPP_URL =
-  "https://wa.me/2348067452380?text=Hi!%20I'd%20like%20a%20free%20Shopify%20store%20audit.";
+  "https://wa.me/13154541290?text=Hi!%20I'd%20like%20a%20free%20Shopify%20store%20audit.";
 const CALENDLY_URL = "https://calendly.com/theheroesagency-info/30min";
 const EMAIL_URL = "mailto:info@theheroesagency.org";
+const PORTFOLIO_URL = "https://bit.ly/4w05iPa";
 
 const Index = () => {
   return (
@@ -63,24 +64,24 @@ const Index = () => {
                 Shopify Experts since 2016 · 120+ stores shipped
               </div>
 
-              <h1 className="text-5xl sm:text-6xl md:text-[5.5rem] font-bold leading-[1.02] tracking-tight mb-7">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] font-bold leading-[1.05] md:leading-[1.02] tracking-tight mb-7">
                 We turn underperforming Shopify stores into{" "}
                 <span className="font-serif-display text-gradient">revenue machines</span>
               </h1>
 
-              <p className="text-lg md:text-xl text-muted-foreground/90 max-w-2xl mx-auto mb-10 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground/90 max-w-2xl mx-auto mb-10 leading-relaxed">
                 Most stores lose 70% of buyers at the homepage. We redesign your store
                 to convert — typically lifting revenue <span className="text-foreground font-semibold">2–4×</span> within 7 days.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Button asChild size="lg" className="gradient-sky text-primary-foreground sky-glow text-base h-14 px-8 rounded-full font-semibold">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center w-full sm:w-auto">
+                <Button asChild size="lg" className="gradient-sky text-primary-foreground sky-glow text-base h-14 px-6 sm:px-8 rounded-full font-semibold w-full sm:w-auto">
                   <a href="#offer">
                     Get My Free Store Audit
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </a>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="text-base h-14 px-8 rounded-full border-white/15 bg-white/[0.02] hover:bg-white/[0.06] backdrop-blur-md">
+                <Button asChild size="lg" variant="outline" className="text-base h-14 px-6 sm:px-8 rounded-full border-white/15 bg-white/[0.02] hover:bg-white/[0.06] backdrop-blur-md w-full sm:w-auto">
                   <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="mr-2 w-5 h-5" />
                     Chat on WhatsApp
@@ -105,7 +106,7 @@ const Index = () => {
             </div>
 
             {/* Result strip */}
-            <div className="mt-24 relative max-w-5xl mx-auto">
+            <div className="mt-16 md:mt-24 relative max-w-5xl mx-auto">
               <div className="absolute -inset-px rounded-3xl gradient-sky opacity-30 blur-xl" />
               <div className="relative grid grid-cols-2 md:grid-cols-4 gap-px bg-white/5 rounded-3xl overflow-hidden ring-gradient premium-shadow">
               {[
@@ -114,9 +115,9 @@ const Index = () => {
                 { v: "7d", l: "Time to results" },
                 { v: "50+", l: "Stores rebuilt" },
               ].map((s) => (
-                <div key={s.l} className="bg-card/80 backdrop-blur-md p-7 text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-gradient tracking-tight">{s.v}</div>
-                  <div className="text-xs md:text-sm text-muted-foreground mt-1.5 uppercase tracking-wider">{s.l}</div>
+                <div key={s.l} className="bg-card/80 backdrop-blur-md p-5 sm:p-7 text-center">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient tracking-tight">{s.v}</div>
+                  <div className="text-[10px] sm:text-xs md:text-sm text-muted-foreground mt-1.5 uppercase tracking-wider">{s.l}</div>
                 </div>
               ))}
               </div>
@@ -276,6 +277,89 @@ const Index = () => {
                   </a>
                 </div>
               </div>
+            </div>
+
+            {/* Portfolio CTA */}
+            <div className="mt-16 md:mt-20 text-center">
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="text-base h-14 px-8 rounded-full border-white/15 bg-white/[0.03] hover:bg-white/[0.08] backdrop-blur-md font-semibold"
+              >
+                <a href={PORTFOLIO_URL} target="_blank" rel="noopener noreferrer">
+                  View Full Portfolio
+                  <ExternalLink className="ml-2 w-4 h-4" />
+                </a>
+              </Button>
+              <p className="text-xs text-muted-foreground mt-4">
+                50+ Shopify stores rebuilt across DTC, beauty, wellness & apparel.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* TESTIMONIALS / TRUST */}
+        <section className="py-20 md:py-28 border-y border-white/[0.06] bg-card/20 relative">
+          <div className="container">
+            <div className="max-w-2xl mx-auto text-center mb-12">
+              <p className="text-primary text-xs font-semibold tracking-[0.25em] uppercase mb-4">— Founders we've helped</p>
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
+                What our clients <span className="font-serif-display text-gradient">actually say</span>
+              </h2>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              {[
+                {
+                  q: "They rebuilt our PDP and we 2.6×'d our conversion rate in the first month. Best money we never spent — the audit alone was worth thousands.",
+                  n: "Marcus T.",
+                  r: "Founder, DTC Wellness Brand",
+                },
+                {
+                  q: "Honest, fast, and zero pushy upsell. They flagged 11 issues on our store, fixed 8 in a week, and our Shopify revenue jumped from $42k to $118k/mo.",
+                  n: "Aïsha L.",
+                  r: "CEO, Haircare Brand (8-figure)",
+                },
+                {
+                  q: "We'd worked with 3 'Shopify experts' before TheHeroes. They're the only ones who actually understood Liquid, Recharge, and Klaviyo as one system.",
+                  n: "Daniel R.",
+                  r: "COO, Subscription Coffee",
+                },
+              ].map((t) => (
+                <div key={t.n} className="glass rounded-2xl p-7 ring-gradient flex flex-col">
+                  <Quote className="w-7 h-7 text-primary/70 mb-4" />
+                  <p className="text-foreground/90 leading-relaxed mb-6 text-[15px]">"{t.q}"</p>
+                  <div className="mt-auto pt-4 border-t border-white/[0.06]">
+                    <div className="flex items-center gap-1 text-[hsl(var(--gold))] mb-2">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-3.5 h-3.5 fill-current" />
+                      ))}
+                    </div>
+                    <div className="font-semibold text-sm">{t.n}</div>
+                    <div className="text-xs text-muted-foreground">{t.r}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Trust bar */}
+            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
+              {[
+                { i: Award, t: "Shopify Experts", d: "Since 2016" },
+                { i: ShieldCheck, t: "NDA on request", d: "Your data stays private" },
+                { i: Lock, t: "Secure & GDPR", d: "Encrypted handoff" },
+                { i: Clock, t: "12h response", d: "Real humans, real fast" },
+              ].map(({ i: Icon, t, d }) => (
+                <div key={t} className="glass rounded-xl p-4 flex items-center gap-3 ring-gradient">
+                  <div className="w-10 h-10 rounded-lg gradient-sky text-primary-foreground flex items-center justify-center shrink-0">
+                    <Icon className="w-5 h-5" />
+                  </div>
+                  <div className="min-w-0">
+                    <div className="text-sm font-semibold truncate">{t}</div>
+                    <div className="text-xs text-muted-foreground truncate">{d}</div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
