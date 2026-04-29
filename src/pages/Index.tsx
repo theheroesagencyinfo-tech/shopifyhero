@@ -7,8 +7,10 @@ import after1 from "@/assets/after-1.jpg";
 import before2 from "@/assets/before-2.jpg";
 import after2 from "@/assets/after-2.jpg";
 
-const WHATSAPP_URL = "https://wa.me/15551234567?text=Hi!%20I'd%20like%20a%20free%20Shopify%20store%20audit.";
-const CALENDLY_URL = "https://calendly.com/theheroes/30min";
+const WHATSAPP_URL =
+  "https://wa.me/2348067452380?text=Hi!%20I'd%20like%20a%20free%20Shopify%20store%20audit.";
+const CALENDLY_URL = "https://calendly.com/theheroesagency-info/30min";
+const EMAIL_URL = "mailto:info@theheroesagency.org";
 
 const Index = () => {
   return (
@@ -18,7 +20,7 @@ const Index = () => {
         <div className="container flex items-center justify-between h-16">
           <a href="#top" className="flex items-center gap-2 font-bold text-lg">
             <Sparkles className="w-5 h-5 text-primary" />
-            <span>Heroes<span className="text-primary">.</span></span>
+            <span>TheHeroes<span className="text-primary">.</span>Agency</span>
           </a>
           <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
             <a href="#case-studies" className="hover:text-foreground transition">Case Studies</a>
@@ -47,7 +49,7 @@ const Index = () => {
             <div className="max-w-4xl mx-auto text-center">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium mb-8">
                 <Sparkles className="w-3.5 h-3.5" />
-                Shopify Conversion Specialists
+                Shopify Experts since 2016 · 120+ stores
               </div>
 
               <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold leading-[1.05] tracking-tight mb-6">
@@ -309,16 +311,17 @@ const Index = () => {
 
       {/* FOOTER */}
       <footer className="border-t border-border py-10">
-        <div className="container flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-          <div className="flex items-center gap-2">
-            <Sparkles className="w-4 h-4 text-primary" />
-            <span>© {new Date().getFullYear()} Heroes Agency. Crafted for conversion.</span>
+          <div className="container flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
+            <div className="flex items-center gap-2">
+              <Sparkles className="w-4 h-4 text-primary" />
+              <span>© {new Date().getFullYear()} TheHeroes Agency · theheroesagency.com</span>
+            </div>
+            <div className="flex items-center gap-6">
+              <a href={EMAIL_URL} className="hover:text-foreground">info@theheroesagency.org</a>
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">WhatsApp</a>
+              <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">Book a call</a>
+            </div>
           </div>
-          <div className="flex items-center gap-6">
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">WhatsApp</a>
-            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">Book a call</a>
-          </div>
-        </div>
       </footer>
 
       {/* Floating WhatsApp */}
