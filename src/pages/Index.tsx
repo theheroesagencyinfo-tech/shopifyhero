@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle2, MessageCircle, ShieldCheck, Clock, Star, ExternalLink, AlertTriangle, XCircle, Target, Layers, Rocket, Quote, Lock, Award, Send, Search, FileCheck, Flame, Smartphone } from "lucide-react";
+import { ArrowRight, CheckCircle2, MessageCircle, ShieldCheck, Clock, Star, ExternalLink, AlertTriangle, XCircle, Target, Layers, Rocket, Quote, Lock, Award, Send, Search, FileCheck, Flame, Smartphone, Users, TrendingDown, HelpCircle, Globe, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BeforeAfter } from "@/components/BeforeAfter";
 import heroBg from "@/assets/landing-hero.jpg";
@@ -259,8 +259,9 @@ const Index = () => {
                 Real stores. <span className="font-serif-display text-gradient">Real numbers.</span>
               </h2>
               <p className="text-muted-foreground text-lg">
-                Drag the slider to see the before/after transformation on live Shopify stores.
+                Drag the slider — see the exact moment a store goes from <span className="text-foreground font-semibold">"meh"</span> to <span className="text-foreground font-semibold">built to convert</span>.
               </p>
+              <p className="mt-3 text-xs uppercase tracking-[0.25em] text-primary/80">Designed for sales, not just looks</p>
             </div>
 
             <div className="space-y-24">
@@ -276,6 +277,16 @@ const Index = () => {
                     afterAlt="Take Let Loose Shopify homepage after redesign — bold subscription-first DTC"
                   />
                   </div>
+                  <div className="mt-4 flex flex-wrap gap-2 text-xs">
+                    <span className="px-2.5 py-1 rounded-full bg-destructive/10 text-destructive border border-destructive/20 font-semibold">Before — Low Converting</span>
+                    <span className="px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 font-semibold">After — Optimized for Sales</span>
+                  </div>
+                  <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-muted-foreground">
+                    <li className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-primary shrink-0" /> Improved product page structure</li>
+                    <li className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-primary shrink-0" /> Added trust elements</li>
+                    <li className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-primary shrink-0" /> Optimized mobile layout</li>
+                    <li className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-primary shrink-0" /> Subscription-first hero</li>
+                  </ul>
                 </div>
                 <div>
                   <p className="text-primary text-xs font-semibold tracking-[0.25em] uppercase mb-4">
@@ -336,6 +347,16 @@ const Index = () => {
                     afterAlt="Valeva Shopify homepage after redesign — cinematic founder-led haircare flagship"
                   />
                   </div>
+                  <div className="mt-4 flex flex-wrap gap-2 text-xs">
+                    <span className="px-2.5 py-1 rounded-full bg-destructive/10 text-destructive border border-destructive/20 font-semibold">Before — Low Converting</span>
+                    <span className="px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 font-semibold">After — Optimized for Sales</span>
+                  </div>
+                  <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-muted-foreground">
+                    <li className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-primary shrink-0" /> Founder-led storytelling</li>
+                    <li className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-primary shrink-0" /> Verified review carousel</li>
+                    <li className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-primary shrink-0" /> Mobile-first PDP rebuild</li>
+                    <li className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-primary shrink-0" /> Bundle + AOV upsells</li>
+                  </ul>
                 </div>
                 <div className="lg:order-1">
                   <p className="text-primary text-xs font-semibold tracking-[0.25em] uppercase mb-4">
@@ -405,6 +426,38 @@ const Index = () => {
           </div>
         </section>
 
+        {/* WHO THIS IS FOR */}
+        <section className="py-20 md:py-28 relative overflow-hidden">
+          <div className="pointer-events-none absolute -top-20 left-1/3 w-[420px] h-[420px] bg-orb opacity-40" />
+          <div className="container relative">
+            <div className="max-w-2xl mx-auto text-center mb-12">
+              <p className="text-primary text-xs font-semibold tracking-[0.25em] uppercase mb-4">— Who it's for</p>
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+                This Is For You <span className="font-serif-display text-gradient">If…</span>
+              </h2>
+              <p className="text-muted-foreground text-lg">If any of these sound familiar, the audit will pay for itself the moment you read it.</p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              {[
+                { i: TrendingDown, t: "You're getting traffic but no sales", d: "Your ads are spending, sessions are climbing — and the cart stays empty." },
+                { i: HelpCircle, t: "Your store looks good but doesn't convert", d: "It's pretty. It's modern. It still doesn't turn visitors into buyers." },
+                { i: Search, t: "You're unsure what's actually wrong", d: "You've tweaked headlines, swapped images, lowered prices — nothing moves the needle." },
+              ].map(({ i: Icon, t, d }) => (
+                <div key={t} className="glass rounded-2xl p-7 hover-lift ring-gradient">
+                  <div className="w-11 h-11 rounded-xl gradient-sky text-primary-foreground flex items-center justify-center mb-5 sky-glow">
+                    <Icon className="w-5 h-5" />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2 tracking-tight">{t}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{d}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-center text-muted-foreground mt-10 text-sm uppercase tracking-[0.2em]">
+              <span className="text-foreground/90 font-semibold">Built to convert.</span> &nbsp;·&nbsp; Turn visitors into buyers.
+            </p>
+          </div>
+        </section>
+
         {/* OFFER / CTA */}
         <section id="offer" className="py-24 md:py-32 relative overflow-hidden">
           <div className="absolute inset-0 bg-glow-radial" />
@@ -421,18 +474,30 @@ const Index = () => {
                 <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-5 leading-[1.05]">
                   Get a FREE <span className="font-serif-display text-gradient">Shopify Store Audit</span>
                 </h2>
-                <ul className="text-left max-w-md mx-auto space-y-3 mb-8 text-foreground/90">
-                  {[
-                    "We analyze your store top to bottom",
-                    "Identify the exact conversion problems",
-                    "Give you actionable improvements you can ship today",
-                  ].map((t) => (
-                    <li key={t} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                      <span>{t}</span>
-                    </li>
-                  ))}
-                </ul>
+                <p className="text-muted-foreground text-base md:text-lg max-w-xl mx-auto mb-8">
+                  A real human walks through your store on video and shows you exactly what's costing you sales.
+                </p>
+                <div className="text-left max-w-lg mx-auto mb-6">
+                  <p className="text-xs uppercase tracking-[0.25em] text-primary font-semibold mb-4">What You'll Get</p>
+                  <ul className="space-y-3 text-foreground/90">
+                    {[
+                      { t: "Full store review", d: "Complete UX + design walkthrough — homepage, PDP, cart, checkout." },
+                      { t: "Conversion issues breakdown", d: "Every leak, friction point and trust gap — ranked by revenue impact." },
+                      { t: "Personalized improvement plan", d: "A prioritized action list you can hand to your dev today." },
+                    ].map((it) => (
+                      <li key={it.t} className="flex items-start gap-3">
+                        <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                        <div>
+                          <div className="font-semibold">{it.t}</div>
+                          <div className="text-sm text-muted-foreground">{it.d}</div>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-5 text-sm text-foreground/80 italic border-l-2 border-primary/50 pl-3">
+                    No fluff. Just actionable fixes you can use immediately.
+                  </p>
+                </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                 <Button asChild size="lg" className="gradient-sky text-primary-foreground sky-glow text-base h-14 px-8 rounded-full font-semibold">
@@ -557,6 +622,43 @@ const Index = () => {
           </div>
         </section>
 
+        {/* ABOUT / FOUNDER */}
+        <section className="py-24 md:py-32 relative overflow-hidden border-t border-white/[0.06]">
+          <div className="pointer-events-none absolute -top-20 -left-20 w-[460px] h-[460px] bg-orb opacity-40" />
+          <div className="container relative">
+            <div className="max-w-4xl mx-auto">
+              <div className="grid md:grid-cols-[200px_1fr] gap-8 md:gap-12 items-center">
+                <div className="relative mx-auto md:mx-0">
+                  <div className="absolute -inset-3 gradient-sky opacity-30 blur-2xl rounded-full" />
+                  <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full ring-2 ring-primary/40 bg-card flex items-center justify-center text-5xl font-bold text-gradient sky-glow overflow-hidden">
+                    HA
+                  </div>
+                </div>
+                <div>
+                  <p className="text-primary text-xs font-semibold tracking-[0.25em] uppercase mb-3">— About us</p>
+                  <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-5 leading-tight">
+                    We're a small team that <span className="font-serif-display text-gradient">obsesses over conversion</span>.
+                  </h2>
+                  <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-4">
+                    I'm Harris, founder of TheHeroes Agency. Over the last 6 years my team has rebuilt
+                    <span className="text-foreground font-semibold"> 50+ Shopify stores</span> across DTC, beauty, wellness and apparel —
+                    from scrappy first launches to 7-figure flagships.
+                  </p>
+                  <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-6">
+                    We don't chase awards or design trends. We focus on one thing: <span className="text-foreground font-semibold">revenue per visitor</span>.
+                    Every pixel, every word, every section has to earn its place — or it gets cut.
+                  </p>
+                  <div className="flex flex-wrap gap-2 text-xs">
+                    <span className="px-3 py-1.5 rounded-full glass ring-gradient flex items-center gap-1.5"><Globe className="w-3.5 h-3.5 text-primary" /> Worked with brands worldwide</span>
+                    <span className="px-3 py-1.5 rounded-full glass ring-gradient flex items-center gap-1.5"><Heart className="w-3.5 h-3.5 text-primary" /> Founder-led, no juniors</span>
+                    <span className="px-3 py-1.5 rounded-full glass ring-gradient flex items-center gap-1.5"><Award className="w-3.5 h-3.5 text-primary" /> Shopify Experts since 2016</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* URGENCY */}
         <section className="py-20 md:py-24 border-y border-white/[0.06] bg-card/30 relative overflow-hidden">
           <div className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 h-[400px] bg-orb opacity-50" />
@@ -610,15 +712,22 @@ const Index = () => {
             </div>
 
             {/* FINAL CTA */}
-            <div className="mt-24 text-center">
-              <h3 className="text-3xl md:text-5xl font-bold tracking-tight mb-5 leading-[1.05]">
-                Stop Losing Sales —{" "}
-                <span className="font-serif-display text-gradient">Fix Your Store Today.</span>
-              </h3>
-              <p className="text-muted-foreground text-lg mb-8 max-w-xl mx-auto">
-                Get a free audit and discover exactly what's holding your store back. 12-hour delivery. Zero obligation.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="mt-24 relative">
+              <div className="absolute -inset-4 gradient-sky opacity-20 blur-3xl rounded-[2rem]" />
+              <div className="relative glass-strong rounded-[2rem] p-10 md:p-14 text-center premium-shadow ring-gradient overflow-hidden">
+                <div className="absolute inset-x-0 top-0 h-px shimmer" />
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-destructive/10 border border-destructive/30 text-xs font-semibold mb-6 text-destructive uppercase tracking-[0.2em]">
+                  <AlertTriangle className="w-3.5 h-3.5" />
+                  Last call
+                </div>
+                <h3 className="text-3xl md:text-5xl font-bold tracking-tight mb-5 leading-[1.05] max-w-3xl mx-auto">
+                  Every Day Your Store Isn't Optimized…{" "}
+                  <span className="font-serif-display text-gradient">You're Losing Sales.</span>
+                </h3>
+                <p className="text-muted-foreground text-lg mb-8 max-w-xl mx-auto">
+                  Fix it now — before you waste more traffic, more ad spend, more momentum. The audit is free. The cost of waiting isn't.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild size="lg" className="gradient-sky text-primary-foreground sky-glow text-base h-14 px-8 rounded-full font-semibold">
                   <a href="#offer">
                     Get Free Audit Now
@@ -635,6 +744,12 @@ const Index = () => {
                     Chat on WhatsApp
                   </a>
                 </Button>
+                </div>
+                <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-muted-foreground">
+                  <span className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5 text-primary" /> 12h delivery</span>
+                  <span className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-primary" /> No credit card</span>
+                  <span className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-primary" /> Zero obligation</span>
+                </div>
               </div>
             </div>
           </div>
