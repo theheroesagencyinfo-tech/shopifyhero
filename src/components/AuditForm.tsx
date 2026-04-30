@@ -99,7 +99,7 @@ export const AuditForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="text-left mt-8 space-y-5 bg-background/40 backdrop-blur-md border border-white/10 rounded-2xl p-6 md:p-7 ring-gradient"
+      className="text-left mt-8 space-y-5 bg-background/40 backdrop-blur-md border border-white/10 rounded-2xl p-4 sm:p-6 md:p-7 ring-gradient"
     >
       <div className="grid sm:grid-cols-2 gap-4">
         <div className="space-y-1.5">
