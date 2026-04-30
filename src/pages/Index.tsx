@@ -93,6 +93,9 @@ const Index = () => {
                   </a>
                 </Button>
               </div>
+              <p className="mt-4 text-xs text-muted-foreground max-w-md mx-auto">
+                No sales call unless you ask. We send the audit — you decide what to do next.
+              </p>
 
               <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
                 <div className="flex items-center gap-1.5">
@@ -252,6 +255,9 @@ const Index = () => {
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </a>
               </Button>
+              <p className="mt-4 text-xs text-muted-foreground max-w-md mx-auto">
+                No sales call unless you ask. We send the audit — you decide what to do next.
+              </p>
             </div>
           </div>
         </section>
