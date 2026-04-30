@@ -8,6 +8,9 @@ import auditAfter1 from "@/assets/audit-after-1.png";
 import auditBefore2 from "@/assets/audit-before-2.jpg";
 import auditAfter2 from "@/assets/audit-after-2.png";
 import mouBarracPhoto from "@/assets/mou-barrac.png";
+import testimonialMarcus from "@/assets/testimonial-marcus.jpg";
+import testimonialAisha from "@/assets/testimonial-aisha.jpg";
+import testimonialDaniel from "@/assets/testimonial-daniel.jpg";
 
 const WHATSAPP_URL =
   "https://wa.me/13154541290?text=Hi!%20I'd%20like%20a%20free%20Shopify%20store%20audit.";
@@ -588,17 +591,22 @@ const Index = () => {
             </div>
             <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
               {[
-                { q: "They rebuilt our PDP and we 2.6×'d our conversion rate in the first month. The audit alone was worth thousands.", n: "Marcus Thompson", brand: "Take Let Loose", url: "https://takeletloose.com/", role: "Founder of", initials: "MT" },
-                { q: "Honest, fast, zero pushy upsell. They flagged 11 issues, fixed 8 in a week — Shopify revenue jumped from $42k to $118k/mo.", n: "Aïsha Laurent", brand: "Valeva", url: "https://valeva.shop/", role: "CEO of", initials: "AL" },
-                { q: "We'd worked with 3 'Shopify experts' before. They're the only ones who actually understood Liquid, Recharge and Klaviyo as one system.", n: "Daniel Rivera", brand: "Velaxen", url: "https://velaxen.shop/", role: "COO of", initials: "DR" },
+                { q: "They rebuilt our PDP and we 2.6×'d our conversion rate in the first month. The audit alone was worth thousands.", n: "Marcus Thompson", brand: "Take Let Loose", url: "https://takeletloose.com/", role: "Founder of", photo: testimonialMarcus },
+                { q: "Honest, fast, zero pushy upsell. They flagged 11 issues, fixed 8 in a week — Shopify revenue jumped from $42k to $118k/mo.", n: "Aïsha Laurent", brand: "Valeva", url: "https://valeva.shop/", role: "CEO of", photo: testimonialAisha },
+                { q: "We'd worked with 3 'Shopify experts' before. They're the only ones who actually understood Liquid, Recharge and Klaviyo as one system.", n: "Daniel Rivera", brand: "Velaxen", url: "https://velaxen.shop/", role: "COO of", photo: testimonialDaniel },
               ].map((t) => (
                 <div key={t.n} className="glass rounded-2xl p-7 ring-gradient flex flex-col">
                   <Quote className="w-7 h-7 text-primary/70 mb-4" />
                   <p className="text-foreground/90 leading-relaxed mb-6 text-[15px]">"{t.q}"</p>
                   <div className="mt-auto pt-4 border-t border-white/[0.06] flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-full gradient-sky text-primary-foreground flex items-center justify-center font-semibold text-sm shrink-0 ring-2 ring-primary/30 sky-glow" aria-label={`${t.n} headshot placeholder`}>
-                      {t.initials}
-                    </div>
+                    <img
+                      src={t.photo}
+                      alt={`${t.n}, ${t.role} ${t.brand}`}
+                      width={48}
+                      height={48}
+                      loading="lazy"
+                      className="w-12 h-12 rounded-full object-cover shrink-0 ring-2 ring-primary/30 sky-glow"
+                    />
                     <div className="min-w-0">
                       <div className="flex items-center gap-1 text-[hsl(var(--gold))] mb-1">
                         {[...Array(5)].map((_, i) => (
