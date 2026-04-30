@@ -32,16 +32,12 @@ const ThankYou = () => {
     if (fired.current) return;
     fired.current = true;
     // Final confirmed Lead event. eventID dedupes against the form-submit Lead.
-    fbqTrack(
-      "Lead",
-      {
-        content_name: "Free Shopify Audit — Confirmed",
-        content_category: state.niche ?? "unknown",
-        contact_method: state.contactMethod ?? "unknown",
-        status: "confirmed",
-      },
-      state.eventId ? { eventID: state.eventId } : undefined
-    );
+    fbqTrack("Lead", {
+      content_name: "Free Shopify Audit — Confirmed",
+      content_category: state.niche ?? "unknown",
+      contact_method: state.contactMethod ?? "unknown",
+      status: "confirmed",
+    }, state.eventId ? { eventID: state.eventId } : undefined);
     fbqTrack("CompleteRegistration", {
       content_name: "Free Shopify Audit",
       status: true,
