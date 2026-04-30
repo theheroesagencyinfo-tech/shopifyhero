@@ -1,6 +1,7 @@
 import { ArrowRight, CheckCircle2, MessageCircle, ShieldCheck, Clock, Star, ExternalLink, AlertTriangle, XCircle, Target, Layers, Rocket, Quote, Lock, Award, Send, Search, FileCheck, Flame, Smartphone, Users, TrendingDown, HelpCircle, Globe, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BeforeAfter } from "@/components/BeforeAfter";
+import { AuditForm } from "@/components/AuditForm";
 import heroBg from "@/assets/landing-hero.jpg";
 import auditBefore1 from "@/assets/audit-before-1.jpg";
 import auditAfter1 from "@/assets/audit-after-1.png";
@@ -472,7 +473,7 @@ const Index = () => {
                   <span className="text-gradient-gold">Limited — only 5 audits per week</span>
                 </div>
                 <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-5 leading-[1.05]">
-                  Get a FREE <span className="font-serif-display text-gradient">Shopify Store Audit</span>
+                  Get a FREE <span className="font-serif-display text-gradient-vibrant">Shopify Store Audit</span>
                 </h2>
                 <p className="text-muted-foreground text-base md:text-lg max-w-xl mx-auto mb-8">
                   A real human walks through your store on video and shows you exactly what's costing you sales.
@@ -499,29 +500,23 @@ const Index = () => {
                   </p>
                 </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                <Button asChild size="lg" className="gradient-sky text-primary-foreground sky-glow text-base h-14 px-8 rounded-full font-semibold">
-                  <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
-                    Get My Free Audit
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                  </a>
-                </Button>
-                <Button
-                  asChild
-                  size="lg"
-                  className="text-base h-14 px-8 rounded-full bg-[hsl(var(--whatsapp))] hover:bg-[hsl(var(--whatsapp))]/90 text-white font-semibold"
-                >
-                  <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-                    <MessageCircle className="mr-2 w-5 h-5" />
-                    WhatsApp Us
-                  </a>
-                </Button>
+              {/* Embedded lead form */}
+              <div className="max-w-xl mx-auto">
+                <AuditForm />
               </div>
 
-              <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
+              <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
                 <div className="flex items-center gap-1.5"><Clock className="w-4 h-4 text-primary" /> 12h delivery</div>
                 <div className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-primary" /> No obligations</div>
                 <div className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-primary" /> 100% free</div>
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 text-[hsl(var(--whatsapp))] hover:underline font-medium"
+                >
+                  <MessageCircle className="w-4 h-4" /> Or message us directly
+                </a>
               </div>
               </div>
             </div>
