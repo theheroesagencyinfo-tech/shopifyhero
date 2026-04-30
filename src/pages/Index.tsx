@@ -631,7 +631,7 @@ const Index = () => {
                 <div className="relative mx-auto md:mx-0">
                   <div className="absolute -inset-3 gradient-sky opacity-30 blur-2xl rounded-full" />
                   <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full ring-2 ring-primary/40 bg-card flex items-center justify-center text-5xl font-bold text-gradient sky-glow overflow-hidden">
-                    HA
+                    MB
                   </div>
                 </div>
                 <div>
@@ -640,9 +640,8 @@ const Index = () => {
                     We're a small team that <span className="font-serif-display text-gradient">obsesses over conversion</span>.
                   </h2>
                   <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-4">
-                    I'm Harris, founder of TheHeroes Agency. Over the last 6 years my team has rebuilt
-                    <span className="text-foreground font-semibold"> 50+ Shopify stores</span> across DTC, beauty, wellness and apparel —
-                    from scrappy first launches to 7-figure flagships.
+                    I'm Mou Barrac, founder of TheHeroes Agency. Over the last 6 years my team has rebuilt
+                    <span className="text-foreground font-semibold"> 100+ Shopify stores</span> across DTC, beauty, wellness and apparel from scrappy first launches to 7-figure flagships.
                   </p>
                   <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-6">
                     We don't chase awards or design trends. We focus on one thing: <span className="text-foreground font-semibold">revenue per visitor</span>.
