@@ -4,6 +4,8 @@ import { BeforeAfter } from "@/components/BeforeAfter";
 import { AuditForm } from "@/components/AuditForm";
 import { useEffect } from "react";
 import { fbqTrack } from "@/lib/fbpixel";
+import { Link } from "react-router-dom";
+import { useAuth } from "@/hooks/useAuth";
 import heroBg from "@/assets/landing-hero.jpg";
 import auditBefore1 from "@/assets/audit-before-1.jpg";
 import auditAfter1 from "@/assets/audit-after-1.png";
@@ -21,6 +23,7 @@ const EMAIL_URL = "mailto:info@theheroesagency.org";
 const PORTFOLIO_URL = "https://bit.ly/4w05iPa";
 
 const Index = () => {
+  const { user, isAdmin } = useAuth();
   useEffect(() => {
     const onClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement | null;
@@ -59,12 +62,23 @@ const Index = () => {
             <a href="#how" className="hover:text-foreground transition">How it works</a>
             <a href="#offer" className="hover:text-foreground transition">Free Audit</a>
           </nav>
-          <Button asChild size="sm" className="gradient-sky text-primary-foreground sky-glow rounded-full px-3 sm:px-5 shrink-0 text-xs sm:text-sm">
-            <a href="#offer">
-              <span className="hidden sm:inline">Get Free Audit</span>
-              <span className="sm:hidden">Free Audit</span>
-            </a>
-          </Button>
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+            {user && isAdmin ? (
+              <Link to="/admin" className="hidden sm:inline text-xs text-muted-foreground hover:text-foreground transition">
+                Admin
+              </Link>
+            ) : (
+              <Link to="/auth" className="hidden sm:inline text-xs text-muted-foreground hover:text-foreground transition">
+                Sign in
+              </Link>
+            )}
+            <Button asChild size="sm" className="gradient-sky text-primary-foreground sky-glow rounded-full px-3 sm:px-5 text-xs sm:text-sm">
+              <a href="#offer">
+                <span className="hidden sm:inline">Get Free Audit</span>
+                <span className="sm:hidden">Free Audit</span>
+              </a>
+            </Button>
+          </div>
         </div>
       </header>
 
