@@ -762,7 +762,7 @@ const Index = () => {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
-        className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 pl-4 pr-5 h-14 rounded-full bg-[hsl(var(--whatsapp))] hover:bg-[hsl(var(--whatsapp))]/90 text-white font-semibold shadow-[0_10px_40px_-10px_hsl(var(--whatsapp)/0.7)] transition-transform hover:scale-105"
+        className="fixed bottom-4 right-4 sm:bottom-5 sm:right-5 z-50 inline-flex items-center gap-2 pl-3 pr-3 sm:pl-4 sm:pr-5 h-12 sm:h-14 rounded-full bg-[hsl(var(--whatsapp))] hover:bg-[hsl(var(--whatsapp))]/90 text-white font-semibold shadow-[0_10px_40px_-10px_hsl(var(--whatsapp)/0.7)] transition-transform hover:scale-105"
       >
         <span className="relative flex h-2.5 w-2.5">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white/70 opacity-70"></span>
