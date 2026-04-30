@@ -2,6 +2,8 @@ import { ArrowRight, CheckCircle2, MessageCircle, ShieldCheck, Clock, Star, Exte
 import { Button } from "@/components/ui/button";
 import { BeforeAfter } from "@/components/BeforeAfter";
 import { AuditForm } from "@/components/AuditForm";
+import { useEffect } from "react";
+import { fbqTrack } from "@/lib/fbpixel";
 import heroBg from "@/assets/landing-hero.jpg";
 import auditBefore1 from "@/assets/audit-before-1.jpg";
 import auditAfter1 from "@/assets/audit-after-1.png";
@@ -19,6 +21,24 @@ const EMAIL_URL = "mailto:info@theheroesagency.org";
 const PORTFOLIO_URL = "https://bit.ly/4w05iPa";
 
 const Index = () => {
+  useEffect(() => {
+    const onClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement | null;
+      const anchor = target?.closest?.("a") as HTMLAnchorElement | null;
+      if (!anchor) return;
+      const href = anchor.getAttribute("href") || "";
+      if (href.startsWith("https://wa.me/")) {
+        fbqTrack("Contact", { method: "whatsapp" });
+      } else if (href.startsWith("mailto:")) {
+        fbqTrack("Contact", { method: "email" });
+      } else if (href.includes("calendly.com")) {
+        fbqTrack("Schedule", { method: "calendly" });
+      }
+    };
+    document.addEventListener("click", onClick);
+    return () => document.removeEventListener("click", onClick);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* NAV */}
