@@ -25,8 +25,7 @@ const Index = () => {
               <span className="w-2 h-2 rounded-sm bg-background" />
             </span>
             <span className="truncate">
-              <span className="hidden xs:inline">TheHeroes<span className="text-primary">.</span>Agency</span>
-              <span className="xs:hidden">Heroes<span className="text-primary">.</span></span>
+              TheHeroes<span className="text-primary">.</span>Agency
             </span>
           </a>
           <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
