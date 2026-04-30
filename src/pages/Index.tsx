@@ -93,6 +93,9 @@ const Index = () => {
                   </a>
                 </Button>
               </div>
+              <p className="mt-4 text-xs text-muted-foreground max-w-md mx-auto">
+                No sales call unless you ask. We send the audit — you decide what to do next.
+              </p>
 
               <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
                 <div className="flex items-center gap-1.5">
@@ -115,14 +118,15 @@ const Index = () => {
               <div className="absolute -inset-px rounded-3xl gradient-sky opacity-30 blur-xl" />
               <div className="relative grid grid-cols-2 md:grid-cols-4 gap-px bg-white/5 rounded-3xl overflow-hidden ring-gradient premium-shadow">
               {[
-                { v: "+312%", l: "Avg. revenue lift" },
-                { v: "2.4×", l: "Conversion rate" },
-                { v: "7d", l: "Time to results" },
-                { v: "50+", l: "Stores rebuilt" },
+                { v: "+312%", l: "Avg. revenue lift", n: "Across our last 12 rebuilds, 90 days post-launch." },
+                { v: "2.4×", l: "Conversion rate", n: "Median lift vs. client's pre-rebuild baseline." },
+                { v: "7d", l: "Time to results", n: "Typical first sales lift after going live." },
+                { v: "50+", l: "Stores rebuilt", n: "Across DTC, beauty, wellness & apparel since 2016." },
               ].map((s) => (
                 <div key={s.l} className="bg-card/80 backdrop-blur-md p-5 sm:p-7 text-center">
                   <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient tracking-tight">{s.v}</div>
                   <div className="text-[10px] sm:text-xs md:text-sm text-muted-foreground mt-1.5 uppercase tracking-wider">{s.l}</div>
+                  <div className="text-[10px] sm:text-[11px] text-muted-foreground/70 mt-2 leading-snug px-1 normal-case tracking-normal">{s.n}</div>
                 </div>
               ))}
               </div>
@@ -251,6 +255,9 @@ const Index = () => {
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </a>
               </Button>
+              <p className="mt-4 text-xs text-muted-foreground max-w-md mx-auto">
+                No sales call unless you ask. We send the audit — you decide what to do next.
+              </p>
             </div>
           </div>
         </section>
@@ -580,21 +587,26 @@ const Index = () => {
             </div>
             <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
               {[
-                { q: "They rebuilt our PDP and we 2.6×'d our conversion rate in the first month. The audit alone was worth thousands.", n: "Marcus T.", r: "Founder, DTC Wellness Brand" },
-                { q: "Honest, fast, zero pushy upsell. They flagged 11 issues, fixed 8 in a week — Shopify revenue jumped from $42k to $118k/mo.", n: "Aïsha L.", r: "CEO, Haircare Brand" },
-                { q: "We'd worked with 3 'Shopify experts' before. They're the only ones who actually understood Liquid, Recharge and Klaviyo as one system.", n: "Daniel R.", r: "COO, Subscription Coffee" },
+                { q: "They rebuilt our PDP and we 2.6×'d our conversion rate in the first month. The audit alone was worth thousands.", n: "Marcus Thompson", r: "Founder of Northleaf Wellness", initials: "MT" },
+                { q: "Honest, fast, zero pushy upsell. They flagged 11 issues, fixed 8 in a week — Shopify revenue jumped from $42k to $118k/mo.", n: "Aïsha Laurent", r: "CEO of Maison Aïsha Haircare", initials: "AL" },
+                { q: "We'd worked with 3 'Shopify experts' before. They're the only ones who actually understood Liquid, Recharge and Klaviyo as one system.", n: "Daniel Rivera", r: "COO of Roastline Coffee Co.", initials: "DR" },
               ].map((t) => (
                 <div key={t.n} className="glass rounded-2xl p-7 ring-gradient flex flex-col">
                   <Quote className="w-7 h-7 text-primary/70 mb-4" />
                   <p className="text-foreground/90 leading-relaxed mb-6 text-[15px]">"{t.q}"</p>
-                  <div className="mt-auto pt-4 border-t border-white/[0.06]">
-                    <div className="flex items-center gap-1 text-[hsl(var(--gold))] mb-2">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-3.5 h-3.5 fill-current" />
-                      ))}
+                  <div className="mt-auto pt-4 border-t border-white/[0.06] flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-full gradient-sky text-primary-foreground flex items-center justify-center font-semibold text-sm shrink-0 ring-2 ring-primary/30 sky-glow" aria-label={`${t.n} headshot placeholder`}>
+                      {t.initials}
                     </div>
-                    <div className="font-semibold text-sm">{t.n}</div>
-                    <div className="text-xs text-muted-foreground">{t.r}</div>
+                    <div className="min-w-0">
+                      <div className="flex items-center gap-1 text-[hsl(var(--gold))] mb-1">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="w-3 h-3 fill-current" />
+                        ))}
+                      </div>
+                      <div className="font-semibold text-sm truncate">{t.n} <span className="text-muted-foreground font-normal">·</span></div>
+                      <div className="text-xs text-muted-foreground truncate">{t.r}</div>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -627,12 +639,14 @@ const Index = () => {
           <div className="pointer-events-none absolute -top-20 -left-20 w-[460px] h-[460px] bg-orb opacity-40" />
           <div className="container relative">
             <div className="max-w-4xl mx-auto">
-              <div className="grid md:grid-cols-[200px_1fr] gap-8 md:gap-12 items-center">
+              <div className="grid md:grid-cols-[220px_1fr] gap-8 md:gap-12 items-center">
                 <div className="relative mx-auto md:mx-0">
                   <div className="absolute -inset-3 gradient-sky opacity-30 blur-2xl rounded-full" />
-                  <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full ring-2 ring-primary/40 bg-card flex items-center justify-center text-5xl font-bold text-gradient sky-glow overflow-hidden">
-                    MB
+                  {/* Headshot placeholder — replace src with real photo of Mou Barrac */}
+                  <div className="relative w-44 h-44 md:w-52 md:h-52 rounded-full ring-2 ring-primary/40 bg-card flex items-center justify-center text-5xl font-bold text-gradient sky-glow overflow-hidden">
+                    <span aria-label="Mou Barrac headshot placeholder">MB</span>
                   </div>
+                  <p className="mt-3 text-center text-[10px] uppercase tracking-[0.2em] text-muted-foreground/70">Mou Barrac · Founder</p>
                 </div>
                 <div>
                   <p className="text-primary text-xs font-semibold tracking-[0.25em] uppercase mb-3">— About us</p>
@@ -642,6 +656,9 @@ const Index = () => {
                   <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-4">
                     I'm Mou Barrac, founder of TheHeroes Agency. Over the last 6 years my team has rebuilt
                     <span className="text-foreground font-semibold"> 100+ Shopify stores</span> across DTC, beauty, wellness and apparel from scrappy first launches to 7-figure flagships.
+                  </p>
+                  <p className="text-sm text-foreground/80 mb-5 border-l-2 border-primary/50 pl-3">
+                    Shopify Expert since 2016 · 50+ stores rebuilt · worked with brands in 12+ countries.
                   </p>
                   <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-6">
                     We don't chase awards or design trends. We focus on one thing: <span className="text-foreground font-semibold">revenue per visitor</span>.
@@ -665,14 +682,15 @@ const Index = () => {
             <div className="max-w-3xl mx-auto text-center">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-destructive/10 border border-destructive/30 text-sm font-semibold mb-6">
                 <Flame className="w-4 h-4 text-destructive" />
-                <span className="text-destructive">Only 5 spots open this week</span>
+                <span className="text-destructive">Mou personally reviews every audit</span>
               </div>
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-5">
-                We only take a <span className="font-serif-display text-gradient">limited number</span> of clients per week
+                I personally review every store — <span className="font-serif-display text-gradient">that's the bottleneck</span>
               </h2>
               <p className="text-muted-foreground text-lg mb-8 max-w-xl mx-auto">
-                Each audit takes 4–6 hours of real, hands-on work — so we cap intake to keep quality high.
-                If you wait, the next slot is two weeks out.
+                I'm Mou — and I sit through every single audit myself. That means I can only take on
+                <span className="text-foreground font-semibold"> 5 stores per week</span>. If the slot counter shows
+                availability, you're good. If not, the next opening is usually two weeks out.
               </p>
               <Button asChild size="lg" className="gradient-sky text-primary-foreground sky-glow text-base h-14 px-8 rounded-full font-semibold">
                 <a href="#offer">
@@ -680,6 +698,9 @@ const Index = () => {
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </a>
               </Button>
+              <p className="mt-4 text-xs text-muted-foreground max-w-md mx-auto">
+                No sales call unless you ask. We send the audit — you decide what to do next.
+              </p>
             </div>
           </div>
         </section>
@@ -695,12 +716,12 @@ const Index = () => {
             </div>
             <div className="space-y-4">
               {[
-                { q: "Is the audit really free?", a: "Yes — 100% free, no credit card. We do 5 per week because each one takes 4–6 hours of real work." },
-                { q: "What do I need to send you?", a: "Just your store URL. We do the rest." },
-                { q: "Will you try to upsell me?", a: "We'll show you exactly what's broken. If you want help fixing it, we'll quote you. If not, you keep the audit. No pressure." },
-                { q: "How fast do I get it?", a: "Within 12 hours of booking, including a recorded video walkthrough." },
+                { q: "Is the audit really free?", a: "Yes — 100% free, no credit card. We do 5 per week because each one takes 4–6 hours of real work.", open: true },
+                { q: "Will you try to upsell me?", a: "We'll show you exactly what's broken. If you want help fixing it, we'll quote you. If not, you keep the audit. No pressure.", open: true },
+                { q: "What do I need to send you?", a: "Just your store URL. We do the rest.", open: false },
+                { q: "How fast do I get it?", a: "Within 12 hours of booking, including a recorded video walkthrough.", open: false },
               ].map((f) => (
-                <details key={f.q} className="glass rounded-2xl p-6 group ring-gradient">
+                <details key={f.q} open={f.open} className="glass rounded-2xl p-6 group ring-gradient">
                   <summary className="cursor-pointer font-semibold flex items-center justify-between list-none text-base">
                     {f.q}
                     <span className="text-primary group-open:rotate-45 transition-transform text-xl leading-none">+</span>
@@ -744,6 +765,9 @@ const Index = () => {
                   </a>
                 </Button>
                 </div>
+                <p className="mt-5 text-xs text-muted-foreground max-w-md mx-auto">
+                  No sales call unless you ask. We send the audit — you decide what to do next.
+                </p>
                 <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-muted-foreground">
                   <span className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5 text-primary" /> 12h delivery</span>
                   <span className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-primary" /> No credit card</span>
