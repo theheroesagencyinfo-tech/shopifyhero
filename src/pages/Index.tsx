@@ -471,7 +471,7 @@ const Index = () => {
           <div className="container relative">
             <div className="relative max-w-3xl mx-auto">
               <div className="absolute -inset-2 rounded-[2rem] gradient-sky opacity-30 blur-2xl" />
-              <div className="relative glass-strong rounded-[2rem] p-10 md:p-16 text-center premium-shadow ring-gradient overflow-hidden">
+              <div className="relative glass-strong rounded-[1.5rem] md:rounded-[2rem] p-5 sm:p-8 md:p-16 text-center premium-shadow ring-gradient overflow-hidden">
                 <div className="absolute inset-x-0 top-0 h-px shimmer" />
                 <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[hsl(var(--gold))]/10 border border-[hsl(var(--gold))]/30 text-sm font-semibold mb-6">
                   <Star className="w-3.5 h-3.5 fill-[hsl(var(--gold))] text-[hsl(var(--gold))]" />
@@ -714,7 +714,7 @@ const Index = () => {
             {/* FINAL CTA */}
             <div className="mt-24 relative">
               <div className="absolute -inset-4 gradient-sky opacity-20 blur-3xl rounded-[2rem]" />
-              <div className="relative glass-strong rounded-[2rem] p-10 md:p-14 text-center premium-shadow ring-gradient overflow-hidden">
+              <div className="relative glass-strong rounded-[1.5rem] md:rounded-[2rem] p-6 sm:p-10 md:p-14 text-center premium-shadow ring-gradient overflow-hidden">
                 <div className="absolute inset-x-0 top-0 h-px shimmer" />
                 <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-destructive/10 border border-destructive/30 text-xs font-semibold mb-6 text-destructive uppercase tracking-[0.2em]">
                   <AlertTriangle className="w-3.5 h-3.5" />
@@ -774,14 +774,14 @@ const Index = () => {
 
       {/* FOOTER */}
       <footer className="border-t border-white/[0.06] py-10">
-          <div className="container flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-            <div className="flex items-center gap-3">
+          <div className="container flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-muted-foreground text-center md:text-left">
+            <div className="flex items-center gap-3 flex-wrap justify-center">
               <span className="w-6 h-6 rounded-md gradient-sky flex items-center justify-center">
                 <span className="w-1.5 h-1.5 rounded-sm bg-background" />
               </span>
               <span>© {new Date().getFullYear()} TheHeroes Agency · theheroesagency.org</span>
             </div>
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-4 sm:gap-6 flex-wrap justify-center">
               <a href={EMAIL_URL} className="hover:text-foreground">info@theheroesagency.org</a>
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">WhatsApp</a>
               <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">Book a call</a>
