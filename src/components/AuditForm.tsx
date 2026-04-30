@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { toast } from "@/hooks/use-toast";
 import { fbqTrack } from "@/lib/fbpixel";
 import { supabase } from "@/integrations/supabase/client";
+import { useNavigate } from "react-router-dom";
 
 const NICHES = [
   "Fashion & Apparel",
@@ -43,6 +44,7 @@ const CALENDLY_URL = "https://calendly.com/theheroesagency-info/30min";
 const EMAIL_TO = "info@theheroesagency.org";
 
 export const AuditForm = () => {
+  const navigate = useNavigate();
   const [storeUrl, setStoreUrl] = useState("");
   const [niche, setNiche] = useState("");
   const [name, setName] = useState("");
@@ -69,11 +71,22 @@ export const AuditForm = () => {
     }
     setSubmitting(true);
 
-    fbqTrack("Lead", {
-      content_name: "Free Shopify Audit",
-      content_category: niche,
-      contact_method: contactMethod,
-    });
+    // Generate a shared event ID so the form-submit Lead and the
+    // thank-you-page Lead are deduplicated by Meta.
+    const eventId =
+      typeof crypto !== "undefined" && "randomUUID" in crypto
+        ? crypto.randomUUID()
+        : `lead_${Date.now()}_${Math.random().toString(36).slice(2)}`;
+
+    fbqTrack(
+      "Lead",
+      {
+        content_name: "Free Shopify Audit",
+        content_category: niche,
+        contact_method: contactMethod,
+      },
+      { eventID: eventId }
+    );
 
     // Save submission to backend (errors here should not block the user handoff)
     const { error: dbError } = await supabase.from("audit_submissions").insert({
@@ -99,7 +112,8 @@ export const AuditForm = () => {
     } else if (contactMethod === "email") {
       const subject = encodeURIComponent(`Free Shopify audit request — ${storeUrl}`);
       const body = encodeURIComponent(summary);
-      window.location.href = `mailto:${EMAIL_TO}?subject=${subject}&body=${body}`;
+      // Open mail client in a new tab so the user stays on our flow
+      window.open(`mailto:${EMAIL_TO}?subject=${subject}&body=${body}`, "_blank", "noopener,noreferrer");
     } else {
       // Pre-fill what we can to Calendly via query params
       const url = new URL(CALENDLY_URL);
@@ -110,10 +124,21 @@ export const AuditForm = () => {
     }
 
     toast({
-      title: "Sending you over…",
-      description: "Your details are pre-filled. Just hit send on the next step.",
+      title: "Request received",
+      description: "We've opened your preferred contact method in a new tab.",
     });
-    setTimeout(() => setSubmitting(false), 600);
+
+    navigate("/thank-you", {
+      state: {
+        storeUrl: storeUrl.trim(),
+        niche: niche.trim(),
+        name: name.trim(),
+        contactMethod,
+        contactValue: contactValue.trim(),
+        eventId,
+      },
+    });
+    setSubmitting(false);
   };
 
   return (
