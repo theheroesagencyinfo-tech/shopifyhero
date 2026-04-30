@@ -8,6 +8,7 @@ import { toast } from "@/hooks/use-toast";
 import { fbqTrack } from "@/lib/fbpixel";
 import { supabase } from "@/integrations/supabase/client";
 import { useNavigate } from "react-router-dom";
+import { openCalendlyPopup } from "@/lib/calendly";
 
 const NICHES = [
   "Fashion & Apparel",
@@ -120,7 +121,9 @@ export const AuditForm = () => {
       url.searchParams.set("name", name);
       if (contactValue.includes("@")) url.searchParams.set("email", contactValue);
       url.searchParams.set("a1", `${storeUrl} — ${niche}`);
-      window.open(url.toString(), "_blank", "noopener,noreferrer");
+      if (!openCalendlyPopup(url.toString())) {
+        window.open(url.toString(), "_blank", "noopener,noreferrer");
+      }
     }
 
     toast({

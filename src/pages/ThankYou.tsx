@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { CheckCircle2, MessageCircle, Mail, CalendarDays, ArrowLeft, Clock, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { fbqTrack } from "@/lib/fbpixel";
+import { openCalendlyPopup } from "@/lib/calendly";
 
 interface ThankYouState {
   storeUrl?: string;
@@ -86,7 +87,14 @@ const ThankYou = () => {
                 </a>
               </Button>
               <Button asChild variant="outline" className="h-12 rounded-full">
-                <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={CALENDLY_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => {
+                    if (openCalendlyPopup(CALENDLY_URL)) e.preventDefault();
+                  }}
+                >
                   <CalendarDays className="w-4 h-4 mr-2" /> Book a call
                 </a>
               </Button>

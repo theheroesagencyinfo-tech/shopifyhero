@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { fbqTrack } from "@/lib/fbpixel";
 import { Link } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
+import { openCalendlyPopup } from "@/lib/calendly";
 import heroBg from "@/assets/landing-hero.jpg";
 import auditBefore1 from "@/assets/audit-before-1.jpg";
 import auditAfter1 from "@/assets/audit-after-1.png";
@@ -36,6 +37,9 @@ const Index = () => {
         fbqTrack("Contact", { method: "email" });
       } else if (href.includes("calendly.com")) {
         fbqTrack("Schedule", { method: "calendly" });
+        if (openCalendlyPopup(href)) {
+          e.preventDefault();
+        }
       }
     };
     document.addEventListener("click", onClick);
