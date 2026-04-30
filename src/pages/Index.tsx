@@ -19,12 +19,15 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* NAV */}
       <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-background/60 border-b border-white/[0.06]">
-        <div className="container flex items-center justify-between h-16">
-          <a href="#top" className="flex items-center gap-2 font-bold text-lg tracking-tight">
-            <span className="w-7 h-7 rounded-lg gradient-sky sky-glow flex items-center justify-center">
+        <div className="container flex items-center justify-between h-16 gap-2">
+          <a href="#top" className="flex items-center gap-2 font-bold text-base sm:text-lg tracking-tight min-w-0">
+            <span className="w-7 h-7 rounded-lg gradient-sky sky-glow flex items-center justify-center shrink-0">
               <span className="w-2 h-2 rounded-sm bg-background" />
             </span>
-            <span>TheHeroes<span className="text-primary">.</span>Agency</span>
+            <span className="truncate">
+              <span className="hidden xs:inline">TheHeroes<span className="text-primary">.</span>Agency</span>
+              <span className="xs:hidden">Heroes<span className="text-primary">.</span></span>
+            </span>
           </a>
           <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
             <a href="#problem" className="hover:text-foreground transition">Problem</a>
@@ -33,8 +36,11 @@ const Index = () => {
             <a href="#how" className="hover:text-foreground transition">How it works</a>
             <a href="#offer" className="hover:text-foreground transition">Free Audit</a>
           </nav>
-          <Button asChild size="sm" className="gradient-sky text-primary-foreground sky-glow rounded-full px-5">
-            <a href="#offer">Get Free Audit</a>
+          <Button asChild size="sm" className="gradient-sky text-primary-foreground sky-glow rounded-full px-3 sm:px-5 shrink-0 text-xs sm:text-sm">
+            <a href="#offer">
+              <span className="hidden sm:inline">Get Free Audit</span>
+              <span className="sm:hidden">Free Audit</span>
+            </a>
           </Button>
         </div>
       </header>
