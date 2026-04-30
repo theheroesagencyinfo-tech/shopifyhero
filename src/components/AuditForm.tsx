@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { toast } from "@/hooks/use-toast";
+import { fbqTrack } from "@/lib/fbpixel";
 
 const NICHES = [
   "Fashion & Apparel",
@@ -66,6 +67,12 @@ export const AuditForm = () => {
       return;
     }
     setSubmitting(true);
+
+    fbqTrack("Lead", {
+      content_name: "Free Shopify Audit",
+      content_category: niche,
+      contact_method: contactMethod,
+    });
 
     const summary =
       `Hi! I'd like a free Shopify store audit.\n\n` +
