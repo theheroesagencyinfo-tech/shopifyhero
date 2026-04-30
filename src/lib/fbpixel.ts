@@ -7,11 +7,16 @@ declare global {
 
 export const fbqTrack = (
   event: string,
-  params?: Record<string, unknown>
+  params?: Record<string, unknown>,
+  options?: { eventID?: string }
 ) => {
   if (typeof window !== "undefined" && typeof window.fbq === "function") {
     try {
-      window.fbq("track", event, params);
+      if (options) {
+        window.fbq("track", event, params, options);
+      } else {
+        window.fbq("track", event, params);
+      }
     } catch {
       // no-op
     }
