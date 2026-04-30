@@ -48,9 +48,6 @@ const Index = () => {
       <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-background/60 border-b border-white/[0.06]">
         <div className="container flex items-center justify-between h-16 gap-2">
           <a href="#top" className="flex items-center gap-2 font-bold text-base sm:text-lg tracking-tight min-w-0">
-            <span className="w-7 h-7 rounded-lg gradient-sky sky-glow flex items-center justify-center shrink-0">
-              <span className="w-2 h-2 rounded-sm bg-background" />
-            </span>
             <span className="truncate">
               TheHeroes<span className="text-primary">.</span>Agency
             </span>
