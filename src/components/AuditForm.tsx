@@ -160,7 +160,7 @@ export const AuditForm = () => {
         <Label className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
           Best way to reach you
         </Label>
-        <div className="grid grid-cols-3 gap-2">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
           {methods.map((m) => {
             const active = contactMethod === m.id;
             const Icon = m.icon;
