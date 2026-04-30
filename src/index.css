@@ -40,6 +40,10 @@
     --sky-glow: 196 100% 70%;
     --gold: 41 95% 62%;
 
+    --violet: 268 90% 66%;
+    --pink: 330 90% 66%;
+    --emerald: 158 75% 48%;
+
     --whatsapp: 142 70% 45%;
 
     --sidebar-background: 222 47% 7%;
@@ -91,8 +95,23 @@
   .gradient-sky {
     background: linear-gradient(110deg, hsl(var(--sky-deep)), hsl(var(--sky)) 55%, hsl(var(--sky-glow)));
   }
+  .gradient-vibrant {
+    background: linear-gradient(110deg, hsl(var(--violet)) 0%, hsl(var(--pink)) 50%, hsl(var(--gold)) 100%);
+  }
+  .gradient-cool {
+    background: linear-gradient(135deg, hsl(var(--sky-deep)) 0%, hsl(var(--violet)) 100%);
+  }
+  .text-gradient-vibrant {
+    background: linear-gradient(110deg, hsl(var(--violet)) 0%, hsl(var(--pink)) 55%, hsl(var(--gold)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
   .sky-glow {
     box-shadow: 0 0 30px hsl(var(--sky) / 0.35), 0 0 80px hsl(var(--sky) / 0.18), inset 0 1px 0 hsl(0 0% 100% / 0.08);
+  }
+  .vibrant-glow {
+    box-shadow: 0 0 30px hsl(var(--violet) / 0.35), 0 0 80px hsl(var(--pink) / 0.2), inset 0 1px 0 hsl(0 0% 100% / 0.08);
   }
   .premium-shadow {
     box-shadow: 0 1px 0 hsl(0 0% 100% / 0.06) inset, 0 30px 60px -30px hsl(var(--sky) / 0.35), 0 18px 40px -20px hsl(0 0% 0% / 0.5);
