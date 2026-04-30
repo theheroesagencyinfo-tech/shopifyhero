@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { toast } from "@/hooks/use-toast";
 import { fbqTrack } from "@/lib/fbpixel";
+import { supabase } from "@/integrations/supabase/client";
 
 const NICHES = [
   "Fashion & Apparel",
@@ -55,7 +56,7 @@ export const AuditForm = () => {
     { id: "call", label: "Book a call", icon: CalendarDays, placeholder: "Best timezone (e.g. EST)" },
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const parsed = schema.safeParse({ storeUrl, niche, name, contactValue, contactMethod });
     if (!parsed.success) {
@@ -73,6 +74,18 @@ export const AuditForm = () => {
       content_category: niche,
       contact_method: contactMethod,
     });
+
+    // Save submission to backend (errors here should not block the user handoff)
+    const { error: dbError } = await supabase.from("audit_submissions").insert({
+      store_url: storeUrl.trim(),
+      niche: niche.trim(),
+      name: name.trim(),
+      contact_method: contactMethod,
+      contact_value: contactValue.trim(),
+    });
+    if (dbError) {
+      console.error("Failed to save audit submission", dbError);
+    }
 
     const summary =
       `Hi! I'd like a free Shopify store audit.\n\n` +
